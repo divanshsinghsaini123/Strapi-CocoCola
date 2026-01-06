@@ -1,0 +1,39 @@
+{
+  "kind": "singleType",
+  "collectionName": "home-pages",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Home Page"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {
+    "i18n": {
+      "localized": false
+    }
+  },
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "page.herosection",
+      "repeatable": false
+    },
+    "promosAndOffers": {
+      "type": "component",
+      "component": "page.cardsection",
+      "repeatable": false
+    },
+    "features": {
+      "type": "component",
+      "component": "page.cardsection",
+      "repeatable": false
+    },
+    "moreFromCocaCola": {
+      "type": "component",
+      "component": "page.cardsection",
+      "repeatable": false
+    }
+  }
+}

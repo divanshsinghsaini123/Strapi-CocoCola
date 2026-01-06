@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_page_cardsections",
+  "info": {
+    "displayName": "Cardsection"
+  },
+  "options": {},
+  "attributes": {
+    "sectionTitle": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "component": "shared.carditem",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
