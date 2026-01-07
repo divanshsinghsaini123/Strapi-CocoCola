@@ -6,17 +6,54 @@
   "options": {},
   "attributes": {
     "heading": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "blocks"
+      "type": "blocks",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
+    },
+    "ButtonText": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "ShowButton"
+            },
+            true
+          ]
+        }
+      },
+      "default": "Enter Now",
+      "maxLength": 10,
+      "required": true
+    },
+    "ButttonLink": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "ShowButton"
+            },
+            true
+          ]
+        }
+      },
+      "required": true
+    },
+    "ShowButton": {
+      "type": "boolean",
+      "required": true
     }
   },
   "config": {}

@@ -6,23 +6,28 @@
   "options": {},
   "attributes": {
     "title": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "description": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "image": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images"
       ]
     },
     "buttonText": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "buttonLink": {
-      "type": "string"
+      "type": "string",
+      "required": true
     }
   },
   "config": {}

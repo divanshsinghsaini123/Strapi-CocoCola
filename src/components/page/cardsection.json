@@ -6,7 +6,8 @@
   "options": {},
   "attributes": {
     "sectionTitle": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "items": {
       "type": "component",

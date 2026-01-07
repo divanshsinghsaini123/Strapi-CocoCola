@@ -7,7 +7,7 @@ export interface PageCardsection extends Struct.ComponentSchema {
   };
   attributes: {
     items: Schema.Attribute.Component<'shared.carditem', true>;
-    sectionTitle: Schema.Attribute.String;
+    sectionTitle: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -17,9 +17,17 @@ export interface PageHerosection extends Struct.ComponentSchema {
     displayName: 'Herosection';
   };
   attributes: {
-    description: Schema.Attribute.Blocks;
-    heading: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
+    ButtonText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 10;
+      }> &
+      Schema.Attribute.DefaultTo<'Enter Now'>;
+    ButttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    ShowButton: Schema.Attribute.Boolean & Schema.Attribute.Required;
   };
 }
 
@@ -29,11 +37,11 @@ export interface SharedCarditem extends Struct.ComponentSchema {
     displayName: 'Carditem';
   };
   attributes: {
-    buttonLink: Schema.Attribute.String;
-    buttonText: Schema.Attribute.String;
-    description: Schema.Attribute.String;
-    image: Schema.Attribute.Media<'images'>;
-    title: Schema.Attribute.String;
+    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
