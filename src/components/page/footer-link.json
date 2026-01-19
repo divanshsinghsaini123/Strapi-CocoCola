@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_page_footer_links",
+  "info": {
+    "displayName": "Footer Link"
+  },
+  "options": {},
+  "attributes": {
+    "Help": {
+      "type": "component",
+      "component": "shared.footer-section",
+      "repeatable": false
+    },
+    "ShopAndVisit": {
+      "type": "component",
+      "component": "shared.footer-section",
+      "repeatable": false
+    },
+    "Legal": {
+      "type": "component",
+      "component": "shared.footer-section",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

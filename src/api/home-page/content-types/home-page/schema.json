@@ -9,11 +9,7 @@
   "options": {
     "draftAndPublish": false
   },
-  "pluginOptions": {
-    "i18n": {
-      "localized": false
-    }
-  },
+  "pluginOptions": {},
   "attributes": {
     "hero": {
       "type": "component",
@@ -33,6 +29,16 @@
     "moreFromCocaCola": {
       "type": "component",
       "component": "page.cardsection",
+      "repeatable": false
+    },
+    "SocialLinks": {
+      "type": "component",
+      "component": "default.social-link",
+      "repeatable": false
+    },
+    "Footer": {
+      "type": "component",
+      "component": "page.footer-link",
       "repeatable": false
     }
   }

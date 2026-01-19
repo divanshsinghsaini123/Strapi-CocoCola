@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_default_social_links",
+  "info": {
+    "displayName": "Social Link"
+  },
+  "options": {},
+  "attributes": {
+    "Instagram": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": false
+    },
+    "Youtube": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": false
+    },
+    "X": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": false
+    },
+    "Facebook": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

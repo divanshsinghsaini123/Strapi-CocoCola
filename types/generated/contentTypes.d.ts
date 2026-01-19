@@ -477,16 +477,12 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: false;
   };
-  pluginOptions: {
-    i18n: {
-      localized: false;
-    };
-  };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     features: Schema.Attribute.Component<'page.cardsection', false>;
+    Footer: Schema.Attribute.Component<'page.footer-link', false>;
     hero: Schema.Attribute.Component<'page.herosection', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -497,6 +493,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     moreFromCocaCola: Schema.Attribute.Component<'page.cardsection', false>;
     promosAndOffers: Schema.Attribute.Component<'page.cardsection', false>;
     publishedAt: Schema.Attribute.DateTime;
+    SocialLinks: Schema.Attribute.Component<'default.social-link', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

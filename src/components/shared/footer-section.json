@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_footer_sections",
+  "info": {
+    "displayName": "Footer Section"
+  },
+  "options": {},
+  "attributes": {
+    "LinkSectionName": {
+      "type": "string",
+      "required": true
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": true,
+      "min": 2,
+      "max": 10
+    }
+  },
+  "config": {}
+}
