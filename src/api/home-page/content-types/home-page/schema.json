@@ -31,12 +31,12 @@
       "component": "page.cardsection",
       "repeatable": false
     },
-    "SocialLinks": {
+    "socialLinks": {
       "type": "component",
       "component": "default.social-link",
       "repeatable": false
     },
-    "Footer": {
+    "footer": {
       "type": "component",
       "component": "page.footer-link",
       "repeatable": false
