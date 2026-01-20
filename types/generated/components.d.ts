@@ -30,9 +30,9 @@ export interface PageFooterLink extends Struct.ComponentSchema {
     displayName: 'Footer Link';
   };
   attributes: {
-    Help: Schema.Attribute.Component<'shared.footer-section', false>;
-    Legal: Schema.Attribute.Component<'shared.footer-section', false>;
-    ShopAndVisit: Schema.Attribute.Component<'shared.footer-section', false>;
+    Section1: Schema.Attribute.Component<'shared.footer-section', false>;
+    Section2: Schema.Attribute.Component<'shared.footer-section', false>;
+    Section3: Schema.Attribute.Component<'shared.footer-section', false>;
   };
 }
 

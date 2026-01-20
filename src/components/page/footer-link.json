@@ -5,17 +5,17 @@
   },
   "options": {},
   "attributes": {
-    "Help": {
+    "Section1": {
       "type": "component",
       "component": "shared.footer-section",
       "repeatable": false
     },
-    "ShopAndVisit": {
+    "Section2": {
       "type": "component",
       "component": "shared.footer-section",
       "repeatable": false
     },
-    "Legal": {
+    "Section3": {
       "type": "component",
       "component": "shared.footer-section",
       "repeatable": false
