@@ -30,6 +30,8 @@ export interface PageFooterLink extends Struct.ComponentSchema {
     displayName: 'Footer Link';
   };
   attributes: {
+    FooterImage: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
     Section1: Schema.Attribute.Component<'shared.footer-section', false>;
     Section2: Schema.Attribute.Component<'shared.footer-section', false>;
     Section3: Schema.Attribute.Component<'shared.footer-section', false>;

@@ -19,6 +19,15 @@
       "type": "component",
       "component": "shared.footer-section",
       "repeatable": false
+    },
+    "FooterImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
     }
   },
   "config": {}

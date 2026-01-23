@@ -40,6 +40,15 @@
       "type": "component",
       "component": "page.footer-link",
       "repeatable": false
+    },
+    "NavbarImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }

@@ -491,6 +491,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     moreFromCocaCola: Schema.Attribute.Component<'page.cardsection', false>;
+    NavbarImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     promosAndOffers: Schema.Attribute.Component<'page.cardsection', false>;
     publishedAt: Schema.Attribute.DateTime;
     socialLinks: Schema.Attribute.Component<'default.social-link', false>;
