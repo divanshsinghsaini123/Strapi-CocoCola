@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_default_hero_section_aboutuses",
+  "info": {
+    "displayName": "HeroSectionAboutus"
+  },
+  "options": {},
+  "attributes": {
+    "HeroBanner": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "paragraph1": {
+      "type": "text",
+      "minLength": 50,
+      "maxLength": 350,
+      "required": false
+    },
+    "paragraph2": {
+      "type": "text",
+      "minLength": 60,
+      "maxLength": 350
+    },
+    "paragraph3": {
+      "type": "text",
+      "minLength": 60,
+      "maxLength": 360
+    }
+  },
+  "config": {}
+}

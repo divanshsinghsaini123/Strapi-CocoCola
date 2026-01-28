@@ -1,5 +1,33 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
+  collectionName: 'components_default_hero_section_aboutuses';
+  info: {
+    displayName: 'HeroSectionAboutus';
+  };
+  attributes: {
+    HeroBanner: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios'
+    > &
+      Schema.Attribute.Required;
+    paragraph1: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 350;
+        minLength: 50;
+      }>;
+    paragraph2: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 350;
+        minLength: 60;
+      }>;
+    paragraph3: Schema.Attribute.Text &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 360;
+        minLength: 60;
+      }>;
+  };
+}
+
 export interface DefaultSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_default_social_links';
   info: {
@@ -104,6 +132,7 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'default.hero-section-aboutus': DefaultHeroSectionAboutus;
       'default.social-link': DefaultSocialLink;
       'page.cardsection': PageCardsection;
       'page.footer-link': PageFooterLink;
