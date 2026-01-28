@@ -11,6 +11,11 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "Hero": {
+      "type": "component",
+      "component": "default.hero-section-aboutus",
+      "repeatable": false
+    },
     "MainPageCards": {
       "type": "component",
       "component": "page.cardsection",
@@ -19,11 +24,6 @@
     "RelatedSectionCards": {
       "type": "component",
       "component": "page.cardsection",
-      "repeatable": false
-    },
-    "Hero": {
-      "type": "component",
-      "component": "default.hero-section-aboutus",
       "repeatable": false
     }
   }
