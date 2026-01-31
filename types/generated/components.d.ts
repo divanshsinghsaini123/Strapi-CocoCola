@@ -1,5 +1,17 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface DefaultFaq extends Struct.ComponentSchema {
+  collectionName: 'components_default_faqs';
+  info: {
+    displayName: 'FAQ';
+    icon: 'bulletList';
+  };
+  attributes: {
+    question_answer: Schema.Attribute.Component<'default.q-and-a', true> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
   collectionName: 'components_default_hero_section_aboutuses';
   info: {
@@ -24,6 +36,25 @@ export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 360;
         minLength: 60;
+      }>;
+  };
+}
+
+export interface DefaultQAndA extends Struct.ComponentSchema {
+  collectionName: 'components_default_q_and_as';
+  info: {
+    displayName: 'Q&A';
+  };
+  attributes: {
+    Answer: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 8;
+      }>;
+    Question: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        minLength: 5;
       }>;
   };
 }
@@ -132,7 +163,9 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'default.faq': DefaultFaq;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
+      'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
       'page.cardsection': PageCardsection;
       'page.footer-link': PageFooterLink;

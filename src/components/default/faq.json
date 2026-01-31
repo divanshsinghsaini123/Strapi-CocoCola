@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_default_faqs",
+  "info": {
+    "displayName": "FAQ",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "question_answer": {
+      "type": "component",
+      "component": "default.q-and-a",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

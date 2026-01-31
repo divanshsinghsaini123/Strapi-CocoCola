@@ -497,6 +497,38 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
+  collectionName: 'contactus_pages';
+  info: {
+    displayName: 'Contactus Page';
+    pluralName: 'contactus-pages';
+    singularName: 'contactus-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Contact_email: Schema.Attribute.Email & Schema.Attribute.Required;
+    Contact_number: Schema.Attribute.BigInteger & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    FAQ: Schema.Attribute.Component<'default.faq', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contactus-page.contactus-page'
+    > &
+      Schema.Attribute.Private;
+    Privacy_policy_page: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Terms_of_use: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home-pages';
   info: {
@@ -1044,6 +1076,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

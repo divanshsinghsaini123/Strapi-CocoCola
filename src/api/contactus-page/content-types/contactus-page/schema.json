@@ -1,0 +1,36 @@
+{
+  "kind": "singleType",
+  "collectionName": "contactus_pages",
+  "info": {
+    "singularName": "contactus-page",
+    "pluralName": "contactus-pages",
+    "displayName": "Contactus Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Terms_of_use": {
+      "type": "blocks",
+      "required": true
+    },
+    "Privacy_policy_page": {
+      "type": "blocks",
+      "required": true
+    },
+    "Contact_email": {
+      "type": "email",
+      "required": true
+    },
+    "Contact_number": {
+      "type": "biginteger",
+      "required": true
+    },
+    "FAQ": {
+      "type": "component",
+      "component": "default.faq",
+      "repeatable": false
+    }
+  }
+}
