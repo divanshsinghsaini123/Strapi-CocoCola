@@ -529,6 +529,39 @@ export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiExtraExtra extends Struct.SingleTypeSchema {
+  collectionName: 'extras';
+  info: {
+    displayName: 'Extra';
+    pluralName: 'extras';
+    singularName: 'extra';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Copyright: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }> &
+      Schema.Attribute.DefaultTo<'\u00A9 2025 The Cloud9 Beverages Company. All rights reserved.'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::extra.extra'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    StickyNavbar: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   collectionName: 'home-pages';
   info: {
@@ -1077,6 +1110,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
+      'api::extra.extra': ApiExtraExtra;
       'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;

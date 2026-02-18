@@ -1,0 +1,26 @@
+{
+  "kind": "singleType",
+  "collectionName": "extras",
+  "info": {
+    "singularName": "extra",
+    "pluralName": "extras",
+    "displayName": "Extra"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "StickyNavbar": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "Copyright": {
+      "type": "string",
+      "default": "© 2025 The Cloud9 Beverages Company. All rights reserved.",
+      "maxLength": 100,
+      "required": true
+    }
+  }
+}
