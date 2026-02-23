@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_manufacturer_s_details",
+  "info": {
+    "displayName": "Manufacturer's_details",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "PlantCode": {
+      "type": "string",
+      "required": true
+    },
+    "ManufacturerAddress": {
+      "type": "text",
+      "required": true
+    },
+    "FssaiNo": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

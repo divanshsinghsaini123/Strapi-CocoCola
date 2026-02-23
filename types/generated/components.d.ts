@@ -117,6 +117,20 @@ export interface PageHerosection extends Struct.ComponentSchema {
   };
 }
 
+export interface PageManufacturingComponent extends Struct.ComponentSchema {
+  collectionName: 'components_page_manufacturing_components';
+  info: {
+    displayName: 'Manufacturing Component';
+  };
+  attributes: {
+    Section_Table_Row: Schema.Attribute.Component<
+      'shared.manufacturer-s-details',
+      true
+    >;
+    Table_ComponentName: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedCarditem extends Struct.ComponentSchema {
   collectionName: 'components_shared_carditems';
   info: {
@@ -160,6 +174,19 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
+  collectionName: 'components_shared_manufacturer_s_details';
+  info: {
+    displayName: "Manufacturer's_details";
+    icon: 'bulletList';
+  };
+  attributes: {
+    FssaiNo: Schema.Attribute.String & Schema.Attribute.Required;
+    ManufacturerAddress: Schema.Attribute.Text & Schema.Attribute.Required;
+    PlantCode: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -170,9 +197,11 @@ declare module '@strapi/strapi' {
       'page.cardsection': PageCardsection;
       'page.footer-link': PageFooterLink;
       'page.herosection': PageHerosection;
+      'page.manufacturing-component': PageManufacturingComponent;
       'shared.carditem': SharedCarditem;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
+      'shared.manufacturer-s-details': SharedManufacturerSDetails;
     }
   }
 }

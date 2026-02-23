@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_page_manufacturing_components",
+  "info": {
+    "displayName": "Manufacturing Component"
+  },
+  "options": {},
+  "attributes": {
+    "Table_ComponentName": {
+      "type": "string",
+      "required": true
+    },
+    "Section_Table_Row": {
+      "type": "component",
+      "component": "shared.manufacturer-s-details",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

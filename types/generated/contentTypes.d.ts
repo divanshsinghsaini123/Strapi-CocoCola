@@ -597,6 +597,41 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiManufacturingListManufacturingList
+  extends Struct.SingleTypeSchema {
+  collectionName: 'manufacturing_lists';
+  info: {
+    displayName: 'Manufacturing_list';
+    pluralName: 'manufacturing-lists';
+    singularName: 'manufacturing-list';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CompanyLogo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::manufacturing-list.manufacturing-list'
+    > &
+      Schema.Attribute.Private;
+    MarketerDetails: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    Section_table: Schema.Attribute.Component<
+      'page.manufacturing-component',
+      true
+    >;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -1112,6 +1147,7 @@ declare module '@strapi/strapi' {
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::extra.extra': ApiExtraExtra;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::manufacturing-list.manufacturing-list': ApiManufacturingListManufacturingList;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

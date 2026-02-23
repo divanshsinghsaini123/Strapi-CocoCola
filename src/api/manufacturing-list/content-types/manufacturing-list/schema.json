@@ -1,0 +1,33 @@
+{
+  "kind": "singleType",
+  "collectionName": "manufacturing_lists",
+  "info": {
+    "singularName": "manufacturing-list",
+    "pluralName": "manufacturing-lists",
+    "displayName": "Manufacturing_list"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "MarketerDetails": {
+      "type": "string",
+      "required": true
+    },
+    "CompanyLogo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Section_table": {
+      "type": "component",
+      "component": "page.manufacturing-component",
+      "repeatable": true
+    }
+  }
+}
