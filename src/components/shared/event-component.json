@@ -22,9 +22,9 @@
         "visible": {
           "==": [
             {
-              "var": ""
+              "var": "hasAddress"
             },
-            ""
+            false
           ]
         }
       },
