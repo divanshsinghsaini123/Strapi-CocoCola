@@ -529,6 +529,40 @@ export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
+  collectionName: 'event_pages';
+  info: {
+    displayName: 'Event page';
+    pluralName: 'event-pages';
+    singularName: 'event-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Refresh your vibe. Fuel your moment. Join us for an unforgettable experience powered by bold flavors, good music, and great energy. From exciting activities to chill hangout zones, this event is all about celebrating freshness, connection, and pure enjoyment. Come thirsty for fun \u2014 leave refreshed.'>;
+    Event: Schema.Attribute.Component<'shared.event-component', true>;
+    Heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Events'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::event-page.event-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExtraExtra extends Struct.SingleTypeSchema {
   collectionName: 'extras';
   info: {
@@ -1145,6 +1179,7 @@ declare module '@strapi/strapi' {
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
+      'api::event-page.event-page': ApiEventPageEventPage;
       'api::extra.extra': ApiExtraExtra;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::manufacturing-list.manufacturing-list': ApiManufacturingListManufacturingList;

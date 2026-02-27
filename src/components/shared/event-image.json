@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_event_images",
+  "info": {
+    "displayName": "EventImage"
+  },
+  "options": {},
+  "attributes": {
+    "Picture": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "AltText": {
+      "type": "string",
+      "required": false
+    }
+  },
+  "config": {}
+}

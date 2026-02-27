@@ -145,6 +145,33 @@ export interface SharedCarditem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedEventComponent extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_components';
+  info: {
+    displayName: 'Event_component';
+  };
+  attributes: {
+    EventAddress: Schema.Attribute.String;
+    EventDescription: Schema.Attribute.Text;
+    EventName: Schema.Attribute.String;
+    hasAddress: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<true>;
+    Image: Schema.Attribute.Component<'shared.event-image', true>;
+  };
+}
+
+export interface SharedEventImage extends Struct.ComponentSchema {
+  collectionName: 'components_shared_event_images';
+  info: {
+    displayName: 'EventImage';
+  };
+  attributes: {
+    AltText: Schema.Attribute.String;
+    Picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+  };
+}
+
 export interface SharedFooterLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_footer_links';
   info: {
@@ -199,6 +226,8 @@ declare module '@strapi/strapi' {
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
       'shared.carditem': SharedCarditem;
+      'shared.event-component': SharedEventComponent;
+      'shared.event-image': SharedEventImage;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;

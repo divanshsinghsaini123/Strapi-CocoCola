@@ -1,0 +1,30 @@
+{
+  "kind": "singleType",
+  "collectionName": "event_pages",
+  "info": {
+    "singularName": "event-page",
+    "pluralName": "event-pages",
+    "displayName": "Event page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "default": "Events",
+      "required": true
+    },
+    "Description": {
+      "type": "text",
+      "default": "Refresh your vibe. Fuel your moment. Join us for an unforgettable experience powered by bold flavors, good music, and great energy. From exciting activities to chill hangout zones, this event is all about celebrating freshness, connection, and pure enjoyment. Come thirsty for fun — leave refreshed.",
+      "required": true
+    },
+    "Event": {
+      "type": "component",
+      "component": "shared.event-component",
+      "repeatable": true
+    }
+  }
+}

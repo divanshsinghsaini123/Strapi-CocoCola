@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_shared_event_components",
+  "info": {
+    "displayName": "Event_component"
+  },
+  "options": {},
+  "attributes": {
+    "EventName": {
+      "type": "string"
+    },
+    "EventDescription": {
+      "type": "text"
+    },
+    "hasAddress": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "EventAddress": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": ""
+            },
+            ""
+          ]
+        }
+      },
+      "required": false
+    },
+    "Image": {
+      "type": "component",
+      "component": "shared.event-image",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
