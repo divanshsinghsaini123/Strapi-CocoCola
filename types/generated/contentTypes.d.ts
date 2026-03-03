@@ -492,7 +492,8 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     MainPageCards: Schema.Attribute.Component<'page.cardsection', false>;
-    PageButton: Schema.Attribute.Component<'shared.page-button', false>;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     RelatedSectionCards: Schema.Attribute.Component<'page.cardsection', false>;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -532,6 +533,8 @@ export interface ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs
       'api::become-our-distributor-contact-us.become-our-distributor-contact-us'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     Phone: Schema.Attribute.String & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -567,6 +570,8 @@ export interface ApiBecomeOurDistributorBecomeOurDistributor
       'api::become-our-distributor.become-our-distributor'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -600,6 +605,7 @@ export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
       'api::cobranding.cobranding'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false>;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -634,6 +640,8 @@ export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
       'api::contactus-page.contactus-page'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     Privacy_policy_page: Schema.Attribute.Blocks & Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -674,6 +682,8 @@ export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
       'api::event-page.event-page'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
@@ -705,6 +715,8 @@ export interface ApiExtensionPageExtensionPage extends Struct.SingleTypeSchema {
       'api::extension-page.extension-page'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Row: Schema.Attribute.Component<'shared.extension-row', true>;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -779,6 +791,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.DefaultTo<'#FFFFFF'>;
     NavbarImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     promosAndOffers: Schema.Attribute.Component<'page.cardsection', false>;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
@@ -816,6 +830,8 @@ export interface ApiManufacturingListManufacturingList
     > &
       Schema.Attribute.Private;
     MarketerDetails: Schema.Attribute.String & Schema.Attribute.Required;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false> &
+      Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
     Section_table: Schema.Attribute.Component<
       'page.manufacturing-component',
