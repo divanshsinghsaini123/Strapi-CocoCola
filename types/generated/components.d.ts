@@ -157,7 +157,7 @@ export interface SharedEventComponent extends Struct.ComponentSchema {
     hasAddress: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<true>;
-    Image: Schema.Attribute.Component<'shared.event-image', true>;
+    Media: Schema.Attribute.Component<'shared.event-image', true>;
   };
 }
 
@@ -168,7 +168,7 @@ export interface SharedEventImage extends Struct.ComponentSchema {
   };
   attributes: {
     AltText: Schema.Attribute.String;
-    Picture: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    Picture_video: Schema.Attribute.Media<'images' | 'files' | 'videos'>;
   };
 }
 

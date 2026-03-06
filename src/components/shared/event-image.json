@@ -5,14 +5,13 @@
   },
   "options": {},
   "attributes": {
-    "Picture": {
+    "Picture_video": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [
         "images",
         "files",
-        "videos",
-        "audios"
+        "videos"
       ]
     },
     "AltText": {

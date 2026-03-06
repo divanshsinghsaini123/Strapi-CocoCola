@@ -30,7 +30,7 @@
       },
       "required": false
     },
-    "Image": {
+    "Media": {
       "type": "component",
       "component": "shared.event-image",
       "repeatable": true
