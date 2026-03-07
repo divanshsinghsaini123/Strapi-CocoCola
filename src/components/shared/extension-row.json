@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_extension_rows",
+  "info": {
+    "displayName": "Extension_row"
+  },
+  "options": {},
+  "attributes": {
+    "Name": {
+      "type": "string"
+    },
+    "ExtensionNumber": {
+      "type": "integer"
+    },
+    "Department": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

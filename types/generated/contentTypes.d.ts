@@ -563,6 +563,34 @@ export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiExtensionPageExtensionPage extends Struct.SingleTypeSchema {
+  collectionName: 'extension_pages';
+  info: {
+    displayName: 'Extension page';
+    pluralName: 'extension-pages';
+    singularName: 'extension-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::extension-page.extension-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Row: Schema.Attribute.Component<'shared.extension-row', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiExtraExtra extends Struct.SingleTypeSchema {
   collectionName: 'extras';
   info: {
@@ -1180,6 +1208,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
+      'api::extension-page.extension-page': ApiExtensionPageExtensionPage;
       'api::extra.extra': ApiExtraExtra;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::manufacturing-list.manufacturing-list': ApiManufacturingListManufacturingList;

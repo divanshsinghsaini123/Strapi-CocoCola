@@ -172,6 +172,18 @@ export interface SharedEventImage extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedExtensionRow extends Struct.ComponentSchema {
+  collectionName: 'components_shared_extension_rows';
+  info: {
+    displayName: 'Extension_row';
+  };
+  attributes: {
+    Department: Schema.Attribute.String;
+    ExtensionNumber: Schema.Attribute.Integer;
+    Name: Schema.Attribute.String;
+  };
+}
+
 export interface SharedFooterLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_footer_links';
   info: {
@@ -228,6 +240,7 @@ declare module '@strapi/strapi' {
       'shared.carditem': SharedCarditem;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
+      'shared.extension-row': SharedExtensionRow;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;

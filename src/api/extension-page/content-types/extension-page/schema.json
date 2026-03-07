@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "extension_pages",
+  "info": {
+    "singularName": "extension-page",
+    "pluralName": "extension-pages",
+    "displayName": "Extension page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Row": {
+      "type": "component",
+      "component": "shared.extension-row",
+      "repeatable": true
+    }
+  }
+}
