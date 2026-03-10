@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "cobrandings",
+  "info": {
+    "singularName": "cobranding",
+    "pluralName": "cobrandings",
+    "displayName": "Cobranding"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Card1": {
+      "type": "component",
+      "component": "shared.packaging-cards",
+      "repeatable": false
+    },
+    "card2": {
+      "type": "component",
+      "component": "shared.packaging-cards",
+      "repeatable": false
+    }
+  }
+}

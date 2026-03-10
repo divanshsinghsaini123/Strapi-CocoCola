@@ -226,6 +226,20 @@ export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPackagingCards extends Struct.ComponentSchema {
+  collectionName: 'components_shared_packaging_cards';
+  info: {
+    displayName: 'Packaging Cards';
+  };
+  attributes: {
+    ButtonName: Schema.Attribute.String & Schema.Attribute.Required;
+    CardImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    CardName: Schema.Attribute.String;
+    SubName: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -244,6 +258,7 @@ declare module '@strapi/strapi' {
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
+      'shared.packaging-cards': SharedPackagingCards;
     }
   }
 }

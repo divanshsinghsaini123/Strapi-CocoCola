@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_packaging_cards",
+  "info": {
+    "displayName": "Packaging Cards"
+  },
+  "options": {},
+  "attributes": {
+    "CardName": {
+      "type": "string"
+    },
+    "CardImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "SubName": {
+      "type": "string",
+      "required": true
+    },
+    "ButtonName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

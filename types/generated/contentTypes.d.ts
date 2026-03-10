@@ -497,6 +497,35 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
+  collectionName: 'cobrandings';
+  info: {
+    displayName: 'Cobranding';
+    pluralName: 'cobrandings';
+    singularName: 'cobranding';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Card1: Schema.Attribute.Component<'shared.packaging-cards', false>;
+    card2: Schema.Attribute.Component<'shared.packaging-cards', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cobranding.cobranding'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
   collectionName: 'contactus_pages';
   info: {
@@ -1206,6 +1235,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::extension-page.extension-page': ApiExtensionPageExtensionPage;
