@@ -20,6 +20,11 @@
       "type": "component",
       "component": "shared.packaging-cards",
       "repeatable": false
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

@@ -491,6 +491,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     MainPageCards: Schema.Attribute.Component<'page.cardsection', false>;
     publishedAt: Schema.Attribute.DateTime;
     RelatedSectionCards: Schema.Attribute.Component<'page.cardsection', false>;
+    SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

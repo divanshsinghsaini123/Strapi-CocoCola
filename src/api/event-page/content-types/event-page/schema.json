@@ -25,6 +25,11 @@
       "type": "component",
       "component": "shared.event-component",
       "repeatable": true
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

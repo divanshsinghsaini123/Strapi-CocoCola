@@ -240,6 +240,21 @@ export interface SharedPackagingCards extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSeo extends Struct.ComponentSchema {
+  collectionName: 'components_shared_seos';
+  info: {
+    displayName: 'SEO';
+    icon: 'globe';
+  };
+  attributes: {
+    keywords: Schema.Attribute.String & Schema.Attribute.Required;
+    metaDescription: Schema.Attribute.Text & Schema.Attribute.Required;
+    metaTitle: Schema.Attribute.String & Schema.Attribute.Required;
+    shareImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -259,6 +274,7 @@ declare module '@strapi/strapi' {
       'shared.footer-section': SharedFooterSection;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
       'shared.packaging-cards': SharedPackagingCards;
+      'shared.seo': SharedSeo;
     }
   }
 }

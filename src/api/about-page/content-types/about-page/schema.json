@@ -25,6 +25,11 @@
       "type": "component",
       "component": "page.cardsection",
       "repeatable": false
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }

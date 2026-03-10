@@ -28,6 +28,11 @@
       "type": "component",
       "component": "page.manufacturing-component",
       "repeatable": true
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
     }
   }
 }
