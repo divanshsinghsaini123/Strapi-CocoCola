@@ -8,6 +8,7 @@
     "Picture_video": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files",
@@ -16,7 +17,7 @@
     },
     "AltText": {
       "type": "string",
-      "required": false
+      "required": true
     }
   },
   "config": {}

@@ -33,7 +33,8 @@
     "Media": {
       "type": "component",
       "component": "shared.event-image",
-      "repeatable": true
+      "repeatable": true,
+      "required": true
     }
   },
   "config": {}
