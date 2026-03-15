@@ -30,6 +30,11 @@
       "type": "component",
       "component": "default.footer-section",
       "repeatable": false
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }
