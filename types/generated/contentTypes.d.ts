@@ -616,6 +616,9 @@ export interface ApiEventPageEventPage extends Struct.SingleTypeSchema {
     Description: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Refresh your vibe. Fuel your moment. Join us for an unforgettable experience powered by bold flavors, good music, and great energy. From exciting activities to chill hangout zones, this event is all about celebrating freshness, connection, and pure enjoyment. Come thirsty for fun \u2014 leave refreshed.'>;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     Event: Schema.Attribute.Component<'shared.event-component', true>;
     Heading: Schema.Attribute.String &
       Schema.Attribute.Required &
