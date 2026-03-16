@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "become_our_distributors",
+  "info": {
+    "singularName": "become-our-distributor",
+    "pluralName": "become-our-distributors",
+    "displayName": "BecomeOurDistributor"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hero": {
+      "type": "component",
+      "component": "shared.hero-section",
+      "repeatable": false
+    },
+    "Hero2": {
+      "type": "component",
+      "component": "shared.hero2",
+      "repeatable": false
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "Footer": {
+      "type": "component",
+      "component": "default.footer-section",
+      "repeatable": false
+    }
+  }
+}

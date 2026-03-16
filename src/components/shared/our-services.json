@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_our_services",
+  "info": {
+    "displayName": "Our_services"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "SubHeading": {
+      "type": "string",
+      "required": true
+    },
+    "BulletPoint": {
+      "type": "component",
+      "component": "shared.bullet-points",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

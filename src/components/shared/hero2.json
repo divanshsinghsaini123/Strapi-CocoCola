@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_hero2s",
+  "info": {
+    "displayName": "Hero2"
+  },
+  "options": {},
+  "attributes": {
+    "LeftExpendableSection": {
+      "type": "component",
+      "component": "shared.left-expendable",
+      "repeatable": true
+    },
+    "Hero2Description": {
+      "type": "text",
+      "required": true
+    },
+    "YearsInBusiness": {
+      "type": "string",
+      "required": true
+    },
+    "SucessfulProjects": {
+      "type": "string",
+      "required": true
+    },
+    "HappyClients": {
+      "type": "string",
+      "required": true
+    },
+    "Service": {
+      "type": "component",
+      "component": "shared.our-services",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

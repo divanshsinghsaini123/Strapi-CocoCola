@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_hero_sections",
+  "info": {
+    "displayName": "HeroSection"
+  },
+  "options": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "required": true
+    },
+    "Description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

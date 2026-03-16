@@ -12,6 +12,19 @@ export interface DefaultFaq extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultFooterSection extends Struct.ComponentSchema {
+  collectionName: 'components_default_footer_sections';
+  info: {
+    displayName: 'FooterSection';
+  };
+  attributes: {
+    Footer_Points: Schema.Attribute.Component<'shared.bullet-points', true>;
+    FooterSection: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Become an Authorized Hell Energy Distributor!'>;
+  };
+}
+
 export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
   collectionName: 'components_default_hero_section_aboutuses';
   info: {
@@ -131,6 +144,18 @@ export interface PageManufacturingComponent extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedBulletPoints extends Struct.ComponentSchema {
+  collectionName: 'components_shared_bullet_points';
+  info: {
+    displayName: 'Bullet_Points';
+  };
+  attributes: {
+    Points: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Age: Applicant must be of 18 years minimum.'>;
+  };
+}
+
 export interface SharedCarditem extends Struct.ComponentSchema {
   collectionName: 'components_shared_carditems';
   info: {
@@ -215,6 +240,46 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedHeroSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero_sections';
+  info: {
+    displayName: 'HeroSection';
+  };
+  attributes: {
+    Description: Schema.Attribute.String & Schema.Attribute.Required;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedHero2 extends Struct.ComponentSchema {
+  collectionName: 'components_shared_hero2s';
+  info: {
+    displayName: 'Hero2';
+  };
+  attributes: {
+    HappyClients: Schema.Attribute.String & Schema.Attribute.Required;
+    Hero2Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    LeftExpendableSection: Schema.Attribute.Component<
+      'shared.left-expendable',
+      true
+    >;
+    Service: Schema.Attribute.Component<'shared.our-services', true>;
+    SucessfulProjects: Schema.Attribute.String & Schema.Attribute.Required;
+    YearsInBusiness: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLeftExpendable extends Struct.ComponentSchema {
+  collectionName: 'components_shared_left_expendables';
+  info: {
+    displayName: 'LeftExpendable';
+  };
+  attributes: {
+    Description: Schema.Attribute.Text & Schema.Attribute.Required;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
   collectionName: 'components_shared_manufacturer_s_details';
   info: {
@@ -225,6 +290,18 @@ export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
     FssaiNo: Schema.Attribute.String & Schema.Attribute.Required;
     ManufacturerAddress: Schema.Attribute.Text & Schema.Attribute.Required;
     PlantCode: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedOurServices extends Struct.ComponentSchema {
+  collectionName: 'components_shared_our_services';
+  info: {
+    displayName: 'Our_services';
+  };
+  attributes: {
+    BulletPoint: Schema.Attribute.Component<'shared.bullet-points', true>;
+    Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    SubHeading: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -261,6 +338,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'default.faq': DefaultFaq;
+      'default.footer-section': DefaultFooterSection;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
@@ -268,13 +346,18 @@ declare module '@strapi/strapi' {
       'page.footer-link': PageFooterLink;
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
+      'shared.bullet-points': SharedBulletPoints;
       'shared.carditem': SharedCarditem;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
       'shared.extension-row': SharedExtensionRow;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
+      'shared.hero-section': SharedHeroSection;
+      'shared.hero2': SharedHero2;
+      'shared.left-expendable': SharedLeftExpendable;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
+      'shared.our-services': SharedOurServices;
       'shared.packaging-cards': SharedPackagingCards;
       'shared.seo': SharedSeo;
     }

@@ -498,6 +498,38 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBecomeOurDistributorBecomeOurDistributor
+  extends Struct.SingleTypeSchema {
+  collectionName: 'become_our_distributors';
+  info: {
+    displayName: 'BecomeOurDistributor';
+    pluralName: 'become-our-distributors';
+    singularName: 'become-our-distributor';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Footer: Schema.Attribute.Component<'default.footer-section', false>;
+    Hero: Schema.Attribute.Component<'shared.hero-section', false>;
+    Hero2: Schema.Attribute.Component<'shared.hero2', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::become-our-distributor.become-our-distributor'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'shared.seo', false>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
   collectionName: 'cobrandings';
   info: {
@@ -1242,6 +1274,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::become-our-distributor.become-our-distributor': ApiBecomeOurDistributorBecomeOurDistributor;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
