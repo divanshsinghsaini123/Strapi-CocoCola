@@ -1,0 +1,42 @@
+{
+  "kind": "singleType",
+  "collectionName": "become_our_distributor_contact_uses",
+  "info": {
+    "singularName": "become-our-distributor-contact-us",
+    "pluralName": "become-our-distributor-contact-uses",
+    "displayName": "BecomeOurDistributor_ContactUs"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Description": {
+      "type": "string",
+      "default": "To apply for a Hell Energy dealership in India, contact the official Indian office by calling +91-8463838440 or emailing unni@unnihellenergy.co.in. Interested parties can also visit the official Indian website for the company, or submit their application and business plans to the Hell Energy team for consideration.",
+      "required": true
+    },
+    "Address": {
+      "type": "string",
+      "required": true
+    },
+    "Phone": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "string",
+      "required": true
+    },
+    "FollowUsOn": {
+      "type": "component",
+      "component": "page.follow-us-on",
+      "repeatable": false
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}

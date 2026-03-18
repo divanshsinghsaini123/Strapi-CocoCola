@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_page_follow_us_ons",
+  "info": {
+    "displayName": "FollowUsOn"
+  },
+  "options": {},
+  "attributes": {
+    "Facebook": {
+      "type": "string",
+      "required": true
+    },
+    "Twitter": {
+      "type": "string",
+      "required": true
+    },
+    "Youtube": {
+      "type": "string",
+      "required": true
+    },
+    "Instagram": {
+      "type": "string",
+      "required": true
+    },
+    "Printest": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

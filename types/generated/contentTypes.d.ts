@@ -501,6 +501,44 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs
+  extends Struct.SingleTypeSchema {
+  collectionName: 'become_our_distributor_contact_uses';
+  info: {
+    displayName: 'BecomeOurDistributor_ContactUs';
+    pluralName: 'become-our-distributor-contact-uses';
+    singularName: 'become-our-distributor-contact-us';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Address: Schema.Attribute.String & Schema.Attribute.Required;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'To apply for a Hell Energy dealership in India, contact the official Indian office by calling +91-8463838440 or emailing unni@unnihellenergy.co.in. Interested parties can also visit the official Indian website for the company, or submit their application and business plans to the Hell Energy team for consideration.'>;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    Email: Schema.Attribute.String & Schema.Attribute.Required;
+    FollowUsOn: Schema.Attribute.Component<'page.follow-us-on', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::become-our-distributor-contact-us.become-our-distributor-contact-us'
+    > &
+      Schema.Attribute.Private;
+    Phone: Schema.Attribute.String & Schema.Attribute.Required;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiBecomeOurDistributorBecomeOurDistributor
   extends Struct.SingleTypeSchema {
   collectionName: 'become_our_distributors';
@@ -1298,6 +1336,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::about-page.about-page': ApiAboutPageAboutPage;
+      'api::become-our-distributor-contact-us.become-our-distributor-contact-us': ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs;
       'api::become-our-distributor.become-our-distributor': ApiBecomeOurDistributorBecomeOurDistributor;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;

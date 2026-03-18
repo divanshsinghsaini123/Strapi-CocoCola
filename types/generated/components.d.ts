@@ -96,6 +96,20 @@ export interface PageCardsection extends Struct.ComponentSchema {
   };
 }
 
+export interface PageFollowUsOn extends Struct.ComponentSchema {
+  collectionName: 'components_page_follow_us_ons';
+  info: {
+    displayName: 'FollowUsOn';
+  };
+  attributes: {
+    Facebook: Schema.Attribute.String & Schema.Attribute.Required;
+    Instagram: Schema.Attribute.String & Schema.Attribute.Required;
+    Printest: Schema.Attribute.String & Schema.Attribute.Required;
+    Twitter: Schema.Attribute.String & Schema.Attribute.Required;
+    Youtube: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface PageFooterLink extends Struct.ComponentSchema {
   collectionName: 'components_page_footer_links';
   info: {
@@ -343,6 +357,7 @@ declare module '@strapi/strapi' {
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
       'page.cardsection': PageCardsection;
+      'page.follow-us-on': PageFollowUsOn;
       'page.footer-link': PageFooterLink;
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
