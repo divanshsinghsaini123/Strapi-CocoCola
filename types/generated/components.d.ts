@@ -262,6 +262,8 @@ export interface SharedHeroSection extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.String & Schema.Attribute.Required;
     Heading: Schema.Attribute.String & Schema.Attribute.Required;
+    Logo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
   };
 }
 
