@@ -11,7 +11,7 @@
       "required": true
     },
     "BackgroundHexColor": {
-      "type": "string",
+      "type": "string", 
       "default": "#000000",
       "required": true
     }
