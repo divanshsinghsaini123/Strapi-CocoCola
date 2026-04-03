@@ -492,6 +492,7 @@ export interface ApiAboutPageAboutPage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     MainPageCards: Schema.Attribute.Component<'page.cardsection', false>;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false>;
     publishedAt: Schema.Attribute.DateTime;
     RelatedSectionCards: Schema.Attribute.Component<'page.cardsection', false>;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
