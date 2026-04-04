@@ -340,6 +340,21 @@ export interface SharedPackagingCards extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPageButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_page_buttons';
+  info: {
+    displayName: 'PageButton';
+  };
+  attributes: {
+    BackgroundHexColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
+    FontHexColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#FFFFFF'>;
+  };
+}
+
 export interface SharedSeo extends Struct.ComponentSchema {
   collectionName: 'components_shared_seos';
   info: {
@@ -381,6 +396,7 @@ declare module '@strapi/strapi' {
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
       'shared.our-services': SharedOurServices;
       'shared.packaging-cards': SharedPackagingCards;
+      'shared.page-button': SharedPageButton;
       'shared.seo': SharedSeo;
     }
   }
