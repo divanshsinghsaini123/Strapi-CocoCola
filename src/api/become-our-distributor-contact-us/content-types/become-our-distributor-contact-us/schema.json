@@ -37,6 +37,12 @@
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "PageButton": {
+      "type": "component",
+      "component": "shared.page-button",
+      "repeatable": false,
+      "required": true
     }
   }
 }

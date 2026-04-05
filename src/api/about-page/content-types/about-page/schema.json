@@ -39,7 +39,8 @@
     "PageButton": {
       "type": "component",
       "component": "shared.page-button",
-      "repeatable": false
+      "repeatable": false,
+      "required": true
     }
   }
 }
