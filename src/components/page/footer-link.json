@@ -28,6 +28,11 @@
         "files",
         "images"
       ]
+    },
+    "FooterHexColorCode": {
+      "type": "string",
+      "default": "#000000",
+      "required": true
     }
   },
   "config": {}

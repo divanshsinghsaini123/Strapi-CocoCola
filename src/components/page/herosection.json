@@ -13,7 +13,7 @@
       "type": "blocks",
       "required": true
     },
-    "image": {
+    "imageDesktop": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -54,6 +54,15 @@
     "ShowButton": {
       "type": "boolean",
       "required": true
+    },
+    "imageMobile": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   },
   "config": {}

@@ -116,6 +116,9 @@ export interface PageFooterLink extends Struct.ComponentSchema {
     displayName: 'Footer Link';
   };
   attributes: {
+    FooterHexColorCode: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
     FooterImage: Schema.Attribute.Media<'files' | 'images'> &
       Schema.Attribute.Required;
     Section1: Schema.Attribute.Component<'shared.footer-section', false>;
@@ -139,7 +142,9 @@ export interface PageHerosection extends Struct.ComponentSchema {
     ButttonLink: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imageDesktop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imageMobile: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     ShowButton: Schema.Attribute.Boolean & Schema.Attribute.Required;
   };
 }

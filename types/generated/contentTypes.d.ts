@@ -773,6 +773,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     moreFromCocaCola: Schema.Attribute.Component<'page.cardsection', false>;
+    NavbarHaxCode: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#FFFFFF'>;
     NavbarImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     promosAndOffers: Schema.Attribute.Component<'page.cardsection', false>;
