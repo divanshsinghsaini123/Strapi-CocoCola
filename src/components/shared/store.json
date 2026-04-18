@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_shared_stores",
+  "info": {
+    "displayName": "Store"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "pincode": {
+      "type": "string",
+      "required": true
+    },
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

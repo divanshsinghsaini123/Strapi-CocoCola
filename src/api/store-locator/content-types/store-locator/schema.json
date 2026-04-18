@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "store_locators",
+  "info": {
+    "singularName": "store-locator",
+    "pluralName": "store-locators",
+    "displayName": "StoreLocator"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Store": {
+      "type": "component",
+      "component": "shared.store",
+      "repeatable": true
+    }
+  }
+}
