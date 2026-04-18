@@ -370,6 +370,21 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStore extends Struct.ComponentSchema {
+  collectionName: 'components_shared_stores';
+  info: {
+    displayName: 'Store';
+  };
+  attributes: {
+    address: Schema.Attribute.String & Schema.Attribute.Required;
+    city: Schema.Attribute.String & Schema.Attribute.Required;
+    latitude: Schema.Attribute.String & Schema.Attribute.Required;
+    longitude: Schema.Attribute.String & Schema.Attribute.Required;
+    name: Schema.Attribute.String & Schema.Attribute.Required;
+    pincode: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
@@ -398,6 +413,7 @@ declare module '@strapi/strapi' {
       'shared.packaging-cards': SharedPackagingCards;
       'shared.page-button': SharedPageButton;
       'shared.seo': SharedSeo;
+      'shared.store': SharedStore;
     }
   }
 }

@@ -60,7 +60,7 @@
       "required": true,
       "default": false
     },
-    "NavbarHaxCode": {
+    "NavbarHaxCode": 
       "type": "string",
       "default": "#FFFFFF",
       "required": true
