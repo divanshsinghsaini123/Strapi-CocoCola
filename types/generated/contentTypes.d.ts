@@ -858,12 +858,16 @@ export interface ApiStoreLocatorStoreLocator extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::store-locator.store-locator'
     > &
       Schema.Attribute.Private;
+    PageButton: Schema.Attribute.Component<'shared.page-button', false>;
     publishedAt: Schema.Attribute.DateTime;
     Store: Schema.Attribute.Component<'shared.store', true>;
     updatedAt: Schema.Attribute.DateTime;
