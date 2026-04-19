@@ -13,7 +13,7 @@
       "type": "string",
       "required": true
     },
-    "city": {
+    "state": {
       "type": "string",
       "required": true
     },
