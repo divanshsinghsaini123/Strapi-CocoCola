@@ -28,6 +28,14 @@
     "longitude": {
       "type": "string",
       "required": true
+    },
+    "mobileNumber": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true
     }
   },
   "config": {}

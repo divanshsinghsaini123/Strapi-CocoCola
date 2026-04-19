@@ -377,8 +377,10 @@ export interface SharedStore extends Struct.ComponentSchema {
   };
   attributes: {
     address: Schema.Attribute.String & Schema.Attribute.Required;
+    email: Schema.Attribute.Email & Schema.Attribute.Required;
     latitude: Schema.Attribute.String & Schema.Attribute.Required;
     longitude: Schema.Attribute.String & Schema.Attribute.Required;
+    mobileNumber: Schema.Attribute.String & Schema.Attribute.Required;
     name: Schema.Attribute.String & Schema.Attribute.Required;
     pincode: Schema.Attribute.String & Schema.Attribute.Required;
     state: Schema.Attribute.String & Schema.Attribute.Required;
