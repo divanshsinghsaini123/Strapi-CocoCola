@@ -788,10 +788,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     moreFromCloud9: Schema.Attribute.Component<'page.cardsection', false>;
-    NavbarFontColorHaxCode: Schema.Attribute.String &
+    NavbarFontColorHexCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#000000'>;
-    NavbarHaxCode: Schema.Attribute.String &
+    NavbarHexCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#FFFFFF'>;
     NavbarImage: Schema.Attribute.Media<'images' | 'files'> &

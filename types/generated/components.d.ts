@@ -121,10 +121,10 @@ export interface PageFooterLink extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'#000000'>;
     FooterImage: Schema.Attribute.Media<'files' | 'images'> &
       Schema.Attribute.Required;
-    LinkHaxColor: Schema.Attribute.String &
+    LinkHexColor: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#000000'>;
-    LinkSectionNameHaxColor: Schema.Attribute.String &
+    LinkSectionNameHexColor: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#000000'>;
     Section1: Schema.Attribute.Component<'shared.footer-section', false>;
