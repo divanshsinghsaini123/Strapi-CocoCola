@@ -34,17 +34,12 @@
       "default": "#000000",
       "required": true
     },
-    "NavbarFontColorHaxCode": {
+    "LinkHexColor": {
       "type": "string",
       "default": "#000000",
       "required": true
     },
-    "LinkHaxColor": {
-      "type": "string",
-      "default": "#000000",
-      "required": true
-    },
-    "LinkSectionNameHaxColor": {
+    "LinkSectionNameHexColor": {
       "type": "string",
       "default": "#000000",
       "required": true

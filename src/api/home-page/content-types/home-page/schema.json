@@ -60,7 +60,7 @@
       "required": true,
       "default": false
     },
-    "NavbarHaxCode": {
+    "NavbarHexCode": {
       "type": "string",
       "default": "#FFFFFF",
       "required": true
@@ -71,7 +71,7 @@
       "repeatable": false,
       "required": true
     },
-    "NavbarFontColorHaxCode": {
+    "NavbarFontColorHexCode": {
       "type": "string",
       "default": "#000000",
       "required": true

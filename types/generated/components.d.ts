@@ -127,9 +127,6 @@ export interface PageFooterLink extends Struct.ComponentSchema {
     LinkSectionNameHaxColor: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#000000'>;
-    NavbarFontColorHaxCode: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'#000000'>;
     Section1: Schema.Attribute.Component<'shared.footer-section', false>;
     Section2: Schema.Attribute.Component<'shared.footer-section', false>;
     Section3: Schema.Attribute.Component<'shared.footer-section', false>;
@@ -193,7 +190,7 @@ export interface SharedCarditem extends Struct.ComponentSchema {
   attributes: {
     buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
     buttonText: Schema.Attribute.String & Schema.Attribute.Required;
-    description: Schema.Attribute.String & Schema.Attribute.Required;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
   };
