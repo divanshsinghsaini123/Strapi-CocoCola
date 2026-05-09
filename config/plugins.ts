@@ -6,6 +6,7 @@ module.exports = ({ env }) => ({
       providerOptions: {
         // CDN URL
         baseUrl: env('GCORE_CDN_URL'),
+        rootPath: 'strapi/uploads',
 
         s3Options: {
           credentials: {
@@ -14,13 +15,11 @@ module.exports = ({ env }) => ({
           },
 
           endpoint: env('GCORE_ENDPOINT'),
-          region: env('GCORE_REGION'),
+          region: env('GCORE_REGION', 's-ed1'),
+          forcePathStyle: true,
 
           params: {
             Bucket: env('GCORE_BUCKET_NAME'),
-
-            // Folder inside bucket
-            Prefix: 'strapi/uploads/',
           },
         },
       },
