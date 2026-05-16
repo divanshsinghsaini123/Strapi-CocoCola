@@ -2,6 +2,17 @@ module.exports = ({ env }) => ({
   upload: {
     config: {
       provider: 'aws-s3',
+      security: {
+        allowedTypes: [
+          'image/*',
+          'video/*',
+          'audio/*',
+          'application/pdf',
+          'text/plain',
+          'text/csv',
+          'application/json',
+        ],
+      },
 
       providerOptions: {
         // CDN URL
