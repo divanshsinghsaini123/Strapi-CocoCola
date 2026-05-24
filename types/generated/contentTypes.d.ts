@@ -521,7 +521,7 @@ export interface ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs
       Schema.Attribute.Private;
     Description: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'To apply for a Hell Energy , this is a very good thing about our project'>;
+      Schema.Attribute.DefaultTo<'To apply for a cloud9 Energy , this is a very good thing about our project'>;
     DisablePage: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;

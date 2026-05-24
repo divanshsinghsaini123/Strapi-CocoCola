@@ -7,7 +7,7 @@
   "attributes": {
     "FooterSection": {
       "type": "string",
-      "default": "Become an Authorized Hell Energy Distributor!",
+      "default": "Become an Authorized cloud9 Energy Distributor!",
       "required": true
     },
     "Footer_Points": {

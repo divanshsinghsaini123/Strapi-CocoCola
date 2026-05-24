@@ -13,7 +13,7 @@
   "attributes": {
     "Description": {
       "type": "string",
-      "default": "To apply for a Hell Energy , this is a very good thing about our project",
+      "default": "To apply for a cloud9 Energy , this is a very good thing about our project",
       "required": true
     },
     "Address": {

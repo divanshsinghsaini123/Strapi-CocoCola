@@ -21,7 +21,7 @@ export interface DefaultFooterSection extends Struct.ComponentSchema {
     Footer_Points: Schema.Attribute.Component<'shared.bullet-points', true>;
     FooterSection: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'Become an Authorized Hell Energy Distributor!'>;
+      Schema.Attribute.DefaultTo<'Become an Authorized cloud9 Energy Distributor!'>;
   };
 }
 
