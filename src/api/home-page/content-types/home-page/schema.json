@@ -26,7 +26,7 @@
       "component": "page.cardsection",
       "repeatable": false
     },
-    "moreFromCocaCola": {
+    "moreFromCloud9": {
       "type": "component",
       "component": "page.cardsection",
       "repeatable": false

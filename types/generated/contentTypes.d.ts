@@ -785,7 +785,7 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       'api::home-page.home-page'
     > &
       Schema.Attribute.Private;
-    moreFromCocaCola: Schema.Attribute.Component<'page.cardsection', false>;
+    moreFromCloud9: Schema.Attribute.Component<'page.cardsection', false>;
     NavbarHaxCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#FFFFFF'>;
