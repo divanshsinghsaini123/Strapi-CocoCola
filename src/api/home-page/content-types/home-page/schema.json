@@ -70,6 +70,20 @@
       "component": "shared.page-button",
       "repeatable": false,
       "required": true
+    },
+    "NavbarFontColorHaxCode": {
+      "type": "string",
+      "default": "#000000",
+      "required": true
+    },
+    "Favicon": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   }
 }
