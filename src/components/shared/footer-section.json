@@ -15,16 +15,6 @@
       "repeatable": true,
       "min": 2,
       "max": 10
-    },
-    "LinkSectionNameHaxColor": {
-      "type": "string",
-      "default": "#000000",
-      "required": true
-    },
-    "LinkHaxColor": {
-      "type": "string",
-      "default": "#000000",
-      "required": true
     }
   },
   "config": {}

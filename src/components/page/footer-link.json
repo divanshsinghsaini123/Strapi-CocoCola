@@ -38,6 +38,16 @@
       "type": "string",
       "default": "#000000",
       "required": true
+    },
+    "LinkHaxColor": {
+      "type": "string",
+      "default": "#000000",
+      "required": true
+    },
+    "LinkSectionNameHaxColor": {
+      "type": "string",
+      "default": "#000000",
+      "required": true
     }
   },
   "config": {}
