@@ -33,6 +33,11 @@
       "type": "string",
       "default": "#000000",
       "required": true
+    },
+    "NavbarFontColorHaxCode": {
+      "type": "string",
+      "default": "#000000",
+      "required": true
     }
   },
   "config": {}
