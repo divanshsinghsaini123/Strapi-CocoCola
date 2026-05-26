@@ -800,6 +800,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Required;
     promosAndOffers: Schema.Attribute.Component<'page.cardsection', false>;
     publishedAt: Schema.Attribute.DateTime;
+    sameColorNavAndFoot: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
     socialLinks: Schema.Attribute.Component<'default.social-link', false>;
     updatedAt: Schema.Attribute.DateTime;
