@@ -151,7 +151,8 @@ export interface PageHerosection extends Struct.ComponentSchema {
     ButttonLink: Schema.Attribute.String & Schema.Attribute.Required;
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
-    imageDesktop: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+    imageDesktop: Schema.Attribute.Media<'images', true> &
+      Schema.Attribute.Required;
     imageMobile: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     ShowButton: Schema.Attribute.Boolean & Schema.Attribute.Required;
