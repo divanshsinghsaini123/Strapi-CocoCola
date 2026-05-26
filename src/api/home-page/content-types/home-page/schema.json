@@ -84,6 +84,11 @@
         "images",
         "files"
       ]
+    },
+    "sameColorNavAndFoot": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }
