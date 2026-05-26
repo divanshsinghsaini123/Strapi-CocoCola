@@ -776,6 +776,8 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     DisablePage: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    Favicon: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     features: Schema.Attribute.Component<'page.cardsection', false>;
     footer: Schema.Attribute.Component<'page.footer-link', false>;
     hero: Schema.Attribute.Component<'page.herosection', false>;
@@ -786,6 +788,9 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     moreFromCloud9: Schema.Attribute.Component<'page.cardsection', false>;
+    NavbarFontColorHaxCode: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
     NavbarHaxCode: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#FFFFFF'>;

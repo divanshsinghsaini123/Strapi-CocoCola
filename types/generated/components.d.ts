@@ -121,6 +121,9 @@ export interface PageFooterLink extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'#000000'>;
     FooterImage: Schema.Attribute.Media<'files' | 'images'> &
       Schema.Attribute.Required;
+    NavbarFontColorHaxCode: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
     Section1: Schema.Attribute.Component<'shared.footer-section', false>;
     Section2: Schema.Attribute.Component<'shared.footer-section', false>;
     Section3: Schema.Attribute.Component<'shared.footer-section', false>;
@@ -247,6 +250,9 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
     displayName: 'Footer Section';
   };
   attributes: {
+    LinkHaxColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
     links: Schema.Attribute.Component<'shared.footer-link', true> &
       Schema.Attribute.SetMinMax<
         {
@@ -256,6 +262,9 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
         number
       >;
     LinkSectionName: Schema.Attribute.String & Schema.Attribute.Required;
+    LinkSectionNameHaxColor: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'#000000'>;
   };
 }
 
