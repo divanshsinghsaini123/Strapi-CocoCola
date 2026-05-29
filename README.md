@@ -31,3 +31,23 @@ npx strapi transfer --from https://active-nurture-c4d476a309.strapiapp.com/admin
 enter the pull tocken , 
 
 4. press enter 
+
+
+
+# for backup the database , 
+# enter the values from the env file , 
+
+$env:PGPASSWORD="YOUR_PASSWORD"
+$env:PGSSLMODE="require"
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_dump.exe" ` 
+# commnet :YOU NEED TO FIND INSTALL LATEST POSTGRES VERSION AND PUT THE    pg_dump.exe path here .
+-h DATABASE-HOST`
+-p PORT `
+-U USER-NAME `
+-d DATABASE_NAME `
+-F c `
+-f "D:\Strapi-CocoCola\backup.dump"
+
+
+
