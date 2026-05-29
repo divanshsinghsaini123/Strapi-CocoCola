@@ -10,20 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check Docker and PostgreSQL Version
+        run: |
+          docker --version
+          docker run --rm postgres:18 pg_dump --version
+
       - name: Create Backup
         run: |
           docker run --rm \
             -e PGPASSWORD="${{ secrets.DB_PASSWORD }}" \
             -e PGSSLMODE=require \
-            -v ${{ github.workspace }}:/backup \
+            -v "${{ github.workspace }}:/backup" \
             postgres:18 \
             pg_dump \
-            -h ${{ secrets.DB_HOST }} \
-            -p ${{ secrets.DB_PORT }} \
-            -U ${{ secrets.DB_USER }} \
-            -d ${{ secrets.DB_NAME }} \
+            -h "${{ secrets.DB_HOST }}" \
+            -p "${{ secrets.DB_PORT }}" \
+            -U "${{ secrets.DB_USER }}" \
+            -d "${{ secrets.DB_NAME }}" \
             -F c \
             -f /backup/backup.dump
+
+      - name: Verify Backup
+        run: |
+          ls -lh
+          ls -lh backup.dump
 
       - name: Compress Backup
         run: gzip backup.dump
@@ -33,6 +43,7 @@ jobs:
         with:
           name: postgres-backup
           path: backup.dump.gz
+          retention-days: 90
 
       - name: Send Email
         uses: dawidd6/action-send-mail@v3
@@ -48,5 +59,10 @@ jobs:
           body: |
             PostgreSQL backup completed successfully.
 
-            Download the backup from:
-            GitHub → Actions → Latest Run → Artifacts → postgres-backup
+            Backup has been uploaded as a GitHub Artifact.
+
+            Steps to download:
+            1. Open GitHub Repository
+            2. Go to Actions
+            3. Open latest "PostgreSQL Backup" run
+            4. Download artifact: postgres-backup
