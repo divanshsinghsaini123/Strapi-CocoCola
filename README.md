@@ -1,6 +1,6 @@
 # This is the url where you can do login and check the deployement of this application 
 
-NEXT_PUBLIC_STRAPI_URL="https://active-nurture-c4d476a309.strapiapp.com"
+NEXT_PUBLIC_STRAPI_URL="https://jellyfish-app-4r55c.ondigitalocean.app/"
 
 # Make sure to add changes inside schema 
 -- make sure to clone localy and make changes then deploy it on strapi cloud or your server ,
@@ -34,7 +34,7 @@ enter the pull tocken ,
 
 
 
-# for backup the database , 
+# for backup the database and restore database 
 # enter the values from the env file , 
 
 $env:PGPASSWORD="YOUR_PASSWORD"
@@ -50,4 +50,40 @@ $env:PGSSLMODE="require"
 -f "D:\Strapi-CocoCola\backup.dump"
 
 
+
+# Restore Database (Method 1: Existing Database)
+
+# ⚠️ Overwrites existing data.
+
+$env:PGPASSWORD="YOUR_PASSWORD"
+$env:PGSSLMODE="require"
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_restore.exe" `
+-h YOUR_HOST `
+-p 25060 `
+-U doadmin `
+-d YOUR_DATABASE `
+--clean `
+--if-exists `
+"backup.dump"
+
+
+
+
+# Restore Database (Method 2: New Database)
+# Create a new database (e.g. restore_test) in DigitalOcean.
+
+
+
+$env:PGPASSWORD="YOUR_PASSWORD"
+$env:PGSSLMODE="require"
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_restore.exe" `
+-h YOUR_HOST `
+-p 25060 `
+-U doadmin `
+-d restore_test `
+"backup.dump"
+
+# This restores the backup into a separate database without affecting production.
 
