@@ -10,28 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install PostgreSQL 18 Client
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg
-          wget -qO- https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo gpg --dearmor -o /usr/share/keyrings/postgresql.gpg
-          echo "deb [signed-by=/usr/share/keyrings/postgresql.gpg] http://apt.postgresql.org/pub/repos/apt noble-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list
-          sudo apt-get update
-          sudo apt-get install -y postgresql-client-18
-          pg_dump --version
-
       - name: Create Backup
-        env:
-          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
-          PGSSLMODE: require
         run: |
-          pg_dump \
+          docker run --rm \
+            -e PGPASSWORD="${{ secrets.DB_PASSWORD }}" \
+            -e PGSSLMODE=require \
+            -v ${{ github.workspace }}:/backup \
+            postgres:18 \
+            pg_dump \
             -h ${{ secrets.DB_HOST }} \
             -p ${{ secrets.DB_PORT }} \
             -U ${{ secrets.DB_USER }} \
             -d ${{ secrets.DB_NAME }} \
             -F c \
-            -f backup.dump
+            -f /backup/backup.dump
 
       - name: Compress Backup
         run: gzip backup.dump
