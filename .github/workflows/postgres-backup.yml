@@ -1,0 +1,55 @@
+name: PostgreSQL Backup
+
+on:
+  schedule:
+    - cron: '0 0 */14 * *'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install PostgreSQL Client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+
+      - name: Create Backup
+        env:
+          PGPASSWORD: ${{ secrets.DB_PASSWORD }}
+          PGSSLMODE: require
+        run: |
+          pg_dump \
+            -h ${{ secrets.DB_HOST }} \
+            -p ${{ secrets.DB_PORT }} \
+            -U ${{ secrets.DB_USER }} \
+            -d ${{ secrets.DB_NAME }} \
+            -F c \
+            -f backup.dump
+
+      - name: Compress Backup
+        run: gzip backup.dump
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: postgres-backup
+          path: backup.dump.gz
+
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: PostgreSQL Backup Successful
+          to: ${{ secrets.EMAIL_TO }}
+          from: GitHub Backup Bot
+          body: |
+            PostgreSQL backup completed successfully.
+            
+            Download the backup from:
+            GitHub → Actions → Latest Run → Artifacts → postgres-backup
