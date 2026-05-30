@@ -56,11 +56,15 @@ jobs:
           subject: PostgreSQL Backup Successful
           to: ${{ secrets.EMAIL_TO }}
           from: ${{ secrets.EMAIL_USERNAME }}
+          attachments: backup.dump.gz
           body: |
             PostgreSQL backup completed successfully.
-
+      
             Backup has been uploaded as a GitHub Artifact.
-
+      
+            Google Drive Folder:
+            https://drive.google.com/drive/u/1/folders/1cD0WGLU_WCemyLqmcwwmowE0avReSUu4
+      
             Steps to download:
             1. Open GitHub Repository
             2. Go to Actions
