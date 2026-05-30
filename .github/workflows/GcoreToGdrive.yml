@@ -1,4 +1,4 @@
-name: PostgreSQL Backup to Google Drive
+name: Gcore to Google Drive
 
 on:
   schedule:
