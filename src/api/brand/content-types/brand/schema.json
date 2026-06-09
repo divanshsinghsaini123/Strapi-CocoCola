@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "brands",
+  "info": {
+    "singularName": "brand",
+    "pluralName": "brands",
+    "displayName": "Brand"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Heading": {
+      "type": "string",
+      "default": "Explore Our Brands",
+      "required": true
+    },
+    "subheading": {
+      "type": "string",
+      "default": "Select a brand to explore its unique products, flavors, and nutritional information.",
+      "required": true
+    }
+  }
+}

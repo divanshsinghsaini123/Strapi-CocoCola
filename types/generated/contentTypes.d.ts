@@ -580,6 +580,36 @@ export interface ApiBecomeOurDistributorBecomeOurDistributor
   };
 }
 
+export interface ApiBrandBrand extends Struct.SingleTypeSchema {
+  collectionName: 'brands';
+  info: {
+    displayName: 'Brand';
+    pluralName: 'brands';
+    singularName: 'brand';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Explore Our Brands'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    subheading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Select a brand to explore its unique products, flavors, and nutritional information.'>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
   collectionName: 'cobrandings';
   info: {
@@ -1398,6 +1428,7 @@ declare module '@strapi/strapi' {
       'api::about-page.about-page': ApiAboutPageAboutPage;
       'api::become-our-distributor-contact-us.become-our-distributor-contact-us': ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs;
       'api::become-our-distributor.become-our-distributor': ApiBecomeOurDistributorBecomeOurDistributor;
+      'api::brand.brand': ApiBrandBrand;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
