@@ -1,0 +1,72 @@
+name: PostgreSQL Backup
+
+on:
+  schedule:
+    - cron: '0 0 */14 * *'
+  workflow_dispatch:
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Docker and PostgreSQL Version
+        run: |
+          docker --version
+          docker run --rm postgres:18 pg_dump --version
+
+      - name: Create Backup
+        run: |
+          docker run --rm \
+            -e PGPASSWORD="${{ secrets.DB_PASSWORD }}" \
+            -e PGSSLMODE=require \
+            -v "${{ github.workspace }}:/backup" \
+            postgres:18 \
+            pg_dump \
+            -h "${{ secrets.DB_HOST }}" \
+            -p "${{ secrets.DB_PORT }}" \
+            -U "${{ secrets.DB_USER }}" \
+            -d "${{ secrets.DB_NAME }}" \
+            -F c \
+            -f /backup/backup.dump
+
+      - name: Verify Backup
+        run: |
+          ls -lh
+          ls -lh backup.dump
+
+      - name: Compress Backup
+        run: gzip backup.dump
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: postgres-backup
+          path: backup.dump.gz
+          retention-days: 90
+
+      - name: Send Email
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.EMAIL_USERNAME }}
+          password: ${{ secrets.EMAIL_PASSWORD }}
+          subject: PostgreSQL Backup Successful
+          to: ${{ secrets.EMAIL_TO }}
+          from: ${{ secrets.EMAIL_USERNAME }}
+          attachments: backup.dump.gz
+          body: |
+            PostgreSQL backup completed successfully.
+      
+            Backup has been uploaded as a GitHub Artifact.
+      
+            Google Drive Folder:
+            https://drive.google.com/drive/u/1/folders/1cD0WGLU_WCemyLqmcwwmowE0avReSUu4
+      
+            Steps to download:
+            1. Open GitHub Repository
+            2. Go to Actions
+            3. Open latest "PostgreSQL Backup" run
+            4. Download artifact: postgres-backup
