@@ -35,6 +35,11 @@
       "component": "shared.event-image",
       "repeatable": true,
       "required": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

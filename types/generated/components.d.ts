@@ -139,20 +139,13 @@ export interface PageHerosection extends Struct.ComponentSchema {
     displayName: 'Herosection';
   };
   attributes: {
-    ButtonText: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 10;
-      }> &
-      Schema.Attribute.DefaultTo<'Enter Now'>;
-    ButttonLink: Schema.Attribute.String & Schema.Attribute.Required;
+    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Blocks & Schema.Attribute.Required;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
     imageDesktop: Schema.Attribute.Media<'images', true> &
       Schema.Attribute.Required;
     imageMobile: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
-    ShowButton: Schema.Attribute.Boolean & Schema.Attribute.Required;
   };
 }
 
@@ -179,6 +172,24 @@ export interface SharedBulletPoints extends Struct.ComponentSchema {
     Points: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Age: Applicant must be of 18 years minimum.'>;
+    redirectlink: Schema.Attribute.String & Schema.Attribute.DefaultTo<'/'>;
+  };
+}
+
+export interface SharedButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_buttons';
+  info: {
+    displayName: 'button';
+    icon: 'cursor';
+  };
+  attributes: {
+    buttonLink: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'/'>;
+    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+    disablebutton: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
   };
 }
 
@@ -188,8 +199,7 @@ export interface SharedCarditem extends Struct.ComponentSchema {
     displayName: 'Carditem';
   };
   attributes: {
-    buttonLink: Schema.Attribute.String & Schema.Attribute.Required;
-    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
@@ -202,6 +212,7 @@ export interface SharedEventComponent extends Struct.ComponentSchema {
     displayName: 'Event_component';
   };
   attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
     EventAddress: Schema.Attribute.String;
     EventDescription: Schema.Attribute.Text;
     EventName: Schema.Attribute.String;
@@ -272,6 +283,7 @@ export interface SharedHeroSection extends Struct.ComponentSchema {
     displayName: 'HeroSection';
   };
   attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
     Description: Schema.Attribute.String & Schema.Attribute.Required;
     Heading: Schema.Attribute.String & Schema.Attribute.Required;
     Logo: Schema.Attribute.Media<'images' | 'files'> &
@@ -408,6 +420,7 @@ declare module '@strapi/strapi' {
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
       'shared.bullet-points': SharedBulletPoints;
+      'shared.button': SharedButton;
       'shared.carditem': SharedCarditem;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;

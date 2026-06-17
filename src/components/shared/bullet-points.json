@@ -9,6 +9,11 @@
       "type": "string",
       "default": "Age: Applicant must be of 18 years minimum.",
       "required": true
+    },
+    "redirectlink": {
+      "type": "string",
+      "default": "/",
+      "required": false
     }
   },
   "config": {}

@@ -21,6 +21,11 @@
         "images",
         "files"
       ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

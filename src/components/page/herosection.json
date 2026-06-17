@@ -21,40 +21,6 @@
         "images"
       ]
     },
-    "ButtonText": {
-      "type": "string",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "ShowButton"
-            },
-            true
-          ]
-        }
-      },
-      "default": "Enter Now",
-      "maxLength": 10,
-      "required": true
-    },
-    "ButttonLink": {
-      "type": "string",
-      "conditions": {
-        "visible": {
-          "==": [
-            {
-              "var": "ShowButton"
-            },
-            true
-          ]
-        }
-      },
-      "required": true
-    },
-    "ShowButton": {
-      "type": "boolean",
-      "required": true
-    },
     "imageMobile": {
       "type": "media",
       "multiple": false,
@@ -63,6 +29,11 @@
         "images",
         "files"
       ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}
