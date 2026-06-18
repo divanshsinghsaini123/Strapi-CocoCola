@@ -644,6 +644,40 @@ export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCofillingCofilling extends Struct.SingleTypeSchema {
+  collectionName: 'cofillings';
+  info: {
+    displayName: 'Cofilling';
+    pluralName: 'cofillings';
+    singularName: 'cofilling';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    aboutus: Schema.Attribute.Component<'default.abooutus', false>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    factoryhighlights: Schema.Attribute.Component<
+      'default.factoryhighlights',
+      false
+    >;
+    hero: Schema.Attribute.Component<'page.hero', false>;
+    hero2: Schema.Attribute.Component<'default.hero2', false>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::cofilling.cofilling'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
   collectionName: 'contactus_pages';
   info: {
@@ -1430,6 +1464,7 @@ declare module '@strapi/strapi' {
       'api::become-our-distributor.become-our-distributor': ApiBecomeOurDistributorBecomeOurDistributor;
       'api::brand.brand': ApiBrandBrand;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
+      'api::cofilling.cofilling': ApiCofillingCofilling;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::extension-page.extension-page': ApiExtensionPageExtensionPage;

@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_default_abooutuses",
+  "info": {
+    "displayName": "abooutus"
+  },
+  "options": {},
+  "attributes": {
+    "sectionheading": {
+      "type": "string",
+      "default": "ABOUT US",
+      "required": true
+    },
+    "backgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "files",
+        "images"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    },
+    "carouselItems": {
+      "type": "component",
+      "component": "shared.carousel-items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

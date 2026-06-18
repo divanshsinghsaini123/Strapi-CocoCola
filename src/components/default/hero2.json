@@ -1,0 +1,40 @@
+{
+  "collectionName": "components_default_hero2s",
+  "info": {
+    "displayName": "hero2"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "description": {
+      "type": "text",
+      "default": "The The Cloud9 Beverages Company manufacturing complex is one of the region’s most advanced integrated beverage production facilities. The plant operates on 8 high-speed filling lines with a total annual capacity exceeding 6 billion units. Every product passes through more than 100 automated inspection and quality control checkpoints during production. As active beverage brand owners with established products in the market, The Cloud9 Beverages Company operates on infrastructure proven by real commercial demand.",
+      "required": true
+    },
+    "media": {
+      "type": "component",
+      "component": "shared.media",
+      "repeatable": true
+    },
+    "leftbutton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": false
+    },
+    "rightbutton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

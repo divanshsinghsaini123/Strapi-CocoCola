@@ -8,6 +8,7 @@
   "attributes": {
     "buttonText": {
       "type": "string",
+      "default": "GET IN TOUCH",
       "required": true
     },
     "buttonLink": {

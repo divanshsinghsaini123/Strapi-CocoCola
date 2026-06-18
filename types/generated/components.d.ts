@@ -1,5 +1,41 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface DefaultAbooutus extends Struct.ComponentSchema {
+  collectionName: 'components_default_abooutuses';
+  info: {
+    displayName: 'abooutus';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    button: Schema.Attribute.Component<'shared.button', false>;
+    carouselItems: Schema.Attribute.Component<'shared.carousel-items', true>;
+    logo: Schema.Attribute.Media<'files' | 'images'> &
+      Schema.Attribute.Required;
+    sectionheading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'ABOUT US'>;
+  };
+}
+
+export interface DefaultFactoryhighlights extends Struct.ComponentSchema {
+  collectionName: 'components_default_factoryhighlights';
+  info: {
+    displayName: 'factoryhighlights';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false>;
+    mainheading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'HELL FACTORY HIGHLIGHTS'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'WATCH OUR INTRO VIDEO'>;
+    youtubeURL1: Schema.Attribute.Text & Schema.Attribute.Required;
+    youtubeURL2: Schema.Attribute.Text & Schema.Attribute.Required;
+  };
+}
+
 export interface DefaultFaq extends Struct.ComponentSchema {
   collectionName: 'components_default_faqs';
   info: {
@@ -50,6 +86,23 @@ export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
         maxLength: 360;
         minLength: 60;
       }>;
+  };
+}
+
+export interface DefaultHero2 extends Struct.ComponentSchema {
+  collectionName: 'components_default_hero2s';
+  info: {
+    displayName: 'hero2';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'The The Cloud9 Beverages Company manufacturing complex is one of the region\u2019s most advanced integrated beverage production facilities. The plant operates on 8 high-speed filling lines with a total annual capacity exceeding 6 billion units. Every product passes through more than 100 automated inspection and quality control checkpoints during production. As active beverage brand owners with established products in the market, The Cloud9 Beverages Company operates on infrastructure proven by real commercial demand.'>;
+    leftbutton: Schema.Attribute.Component<'shared.button', false>;
+    media: Schema.Attribute.Component<'shared.media', true>;
+    rightbutton: Schema.Attribute.Component<'shared.button', false>;
   };
 }
 
@@ -133,6 +186,26 @@ export interface PageFooterLink extends Struct.ComponentSchema {
   };
 }
 
+export interface PageHero extends Struct.ComponentSchema {
+  collectionName: 'components_page_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    backgroundvideo: Schema.Attribute.Media<'files' | 'videos'>;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    leftbutton: Schema.Attribute.Component<'shared.button', false> &
+      Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    rightbutton: Schema.Attribute.Component<'shared.button', false> &
+      Schema.Attribute.Required;
+    stats: Schema.Attribute.Component<'shared.stats', false>;
+    subheading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface PageHerosection extends Struct.ComponentSchema {
   collectionName: 'components_page_herosections';
   info: {
@@ -186,7 +259,9 @@ export interface SharedButton extends Struct.ComponentSchema {
     buttonLink: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'/'>;
-    buttonText: Schema.Attribute.String & Schema.Attribute.Required;
+    buttonText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'GET IN TOUCH'>;
     disablebutton: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -203,6 +278,21 @@ export interface SharedCarditem extends Struct.ComponentSchema {
     description: Schema.Attribute.Text & Schema.Attribute.Required;
     image: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedCarouselItems extends Struct.ComponentSchema {
+  collectionName: 'components_shared_carousel_items';
+  info: {
+    displayName: 'carouselItems';
+  };
+  attributes: {
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'real-time inventory'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'AUTOMATED WAREHOUSE'>;
   };
 }
 
@@ -333,6 +423,18 @@ export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMedia extends Struct.ComponentSchema {
+  collectionName: 'components_shared_media';
+  info: {
+    displayName: 'media';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    tittle: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedOurServices extends Struct.ComponentSchema {
   collectionName: 'components_shared_our_services';
   info: {
@@ -389,6 +491,27 @@ export interface SharedSeo extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedStats extends Struct.ComponentSchema {
+  collectionName: 'components_shared_stats';
+  info: {
+    displayName: 'stats';
+  };
+  attributes: {
+    aluminiumEmptyCanLines: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'3'>;
+    canPerhour: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'750,000'>;
+    fillinglines: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'8'>;
+    totalcapacity: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'6,000,000,000'>;
+  };
+}
+
 export interface SharedStore extends Struct.ComponentSchema {
   collectionName: 'components_shared_stores';
   info: {
@@ -409,19 +532,24 @@ export interface SharedStore extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'default.abooutus': DefaultAbooutus;
+      'default.factoryhighlights': DefaultFactoryhighlights;
       'default.faq': DefaultFaq;
       'default.footer-section': DefaultFooterSection;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
+      'default.hero2': DefaultHero2;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
       'page.cardsection': PageCardsection;
       'page.follow-us-on': PageFollowUsOn;
       'page.footer-link': PageFooterLink;
+      'page.hero': PageHero;
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
       'shared.bullet-points': SharedBulletPoints;
       'shared.button': SharedButton;
       'shared.carditem': SharedCarditem;
+      'shared.carousel-items': SharedCarouselItems;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
       'shared.extension-row': SharedExtensionRow;
@@ -431,10 +559,12 @@ declare module '@strapi/strapi' {
       'shared.hero2': SharedHero2;
       'shared.left-expendable': SharedLeftExpendable;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
+      'shared.media': SharedMedia;
       'shared.our-services': SharedOurServices;
       'shared.packaging-cards': SharedPackagingCards;
       'shared.page-button': SharedPageButton;
       'shared.seo': SharedSeo;
+      'shared.stats': SharedStats;
       'shared.store': SharedStore;
     }
   }

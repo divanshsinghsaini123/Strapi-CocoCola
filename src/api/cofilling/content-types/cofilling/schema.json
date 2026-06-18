@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "cofillings",
+  "info": {
+    "singularName": "cofilling",
+    "pluralName": "cofillings",
+    "displayName": "Cofilling"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hero": {
+      "type": "component",
+      "component": "page.hero",
+      "repeatable": false
+    },
+    "hero2": {
+      "type": "component",
+      "component": "default.hero2",
+      "repeatable": false
+    },
+    "aboutus": {
+      "type": "component",
+      "component": "default.abooutus",
+      "repeatable": false
+    },
+    "factoryhighlights": {
+      "type": "component",
+      "component": "default.factoryhighlights",
+      "repeatable": false
+    }
+  }
+}

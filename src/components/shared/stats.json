@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_shared_stats",
+  "info": {
+    "displayName": "stats"
+  },
+  "options": {},
+  "attributes": {
+    "totalcapacity": {
+      "type": "string",
+      "default": "6,000,000,000",
+      "required": true
+    },
+    "canPerhour": {
+      "type": "string",
+      "default": "750,000",
+      "required": true
+    },
+    "fillinglines": {
+      "type": "string",
+      "default": "8",
+      "required": true
+    },
+    "aluminiumEmptyCanLines": {
+      "type": "string",
+      "default": "3",
+      "required": true
+    }
+  },
+  "config": {}
+}

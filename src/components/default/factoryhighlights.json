@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_default_factoryhighlights",
+  "info": {
+    "displayName": "factoryhighlights"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "WATCH OUR INTRO VIDEO",
+      "required": true
+    },
+    "mainheading": {
+      "type": "string",
+      "default": "HELL FACTORY HIGHLIGHTS",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": false
+    },
+    "youtubeURL1": {
+      "type": "text",
+      "required": true
+    },
+    "youtubeURL2": {
+      "type": "text",
+      "required": true
+    }
+  },
+  "config": {}
+}
