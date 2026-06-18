@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_comtactuses",
+  "info": {
+    "displayName": "comtactus"
+  },
+  "options": {},
+  "attributes": {
+    "location": {
+      "type": "component",
+      "component": "shared.location",
+      "repeatable": false
+    },
+    "enquirySubtitle": {
+      "type": "string",
+      "default": "Minimum order quantity:\\n270 000cans/design/flavour",
+      "required": true
+    },
+    "privacyPolicy": {
+      "type": "component",
+      "component": "shared.privacy-policy",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

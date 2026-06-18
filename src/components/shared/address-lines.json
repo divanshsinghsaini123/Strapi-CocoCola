@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_address_lines",
+  "info": {
+    "displayName": "addressLines"
+  },
+  "options": {},
+  "attributes": {
+    "line": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_gps_lines",
+  "info": {
+    "displayName": "gpsLines"
+  },
+  "options": {},
+  "attributes": {
+    "N": {
+      "type": "string",
+      "required": true
+    },
+    "E": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

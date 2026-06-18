@@ -236,6 +236,16 @@ export interface PageManufacturingComponent extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedAddressLines extends Struct.ComponentSchema {
+  collectionName: 'components_shared_address_lines';
+  info: {
+    displayName: 'addressLines';
+  };
+  attributes: {
+    line: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedBulletPoints extends Struct.ComponentSchema {
   collectionName: 'components_shared_bullet_points';
   info: {
@@ -293,6 +303,20 @@ export interface SharedCarouselItems extends Struct.ComponentSchema {
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'AUTOMATED WAREHOUSE'>;
+  };
+}
+
+export interface SharedComtactus extends Struct.ComponentSchema {
+  collectionName: 'components_shared_comtactuses';
+  info: {
+    displayName: 'comtactus';
+  };
+  attributes: {
+    enquirySubtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Minimum order quantity:\\n270 000cans/design/flavour'>;
+    location: Schema.Attribute.Component<'shared.location', false>;
+    privacyPolicy: Schema.Attribute.Component<'shared.privacy-policy', false>;
   };
 }
 
@@ -367,6 +391,17 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedGpsLines extends Struct.ComponentSchema {
+  collectionName: 'components_shared_gps_lines';
+  info: {
+    displayName: 'gpsLines';
+  };
+  attributes: {
+    E: Schema.Attribute.String & Schema.Attribute.Required;
+    N: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_hero_sections';
   info: {
@@ -407,6 +442,32 @@ export interface SharedLeftExpendable extends Struct.ComponentSchema {
   attributes: {
     Description: Schema.Attribute.Text & Schema.Attribute.Required;
     Heading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedLocation extends Struct.ComponentSchema {
+  collectionName: 'components_shared_locations';
+  info: {
+    displayName: 'location';
+  };
+  attributes: {
+    addressLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Factory address'>;
+    addressLines: Schema.Attribute.Component<'shared.address-lines', true>;
+    detailsTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'LOCATIONS & CONTACTS'>;
+    gpsLabel: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'GPS coordinates:'>;
+    gpsLines: Schema.Attribute.Component<'shared.gps-lines', false>;
+    mainTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'LOCATION'>;
+    mapEmbedUrl: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.679135760633!2d20.91264707687258!3d48.176335548682855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4740a1b0b5b5b5b5%3A0x5b0b5b5b5b5b5b5b!2sHell%20Energy%20Magyarorsz%C3%A1g%20Kft.!5e0!3m2!1sen!2shu!4v1708111111111!5m2!1sen!2shu'>;
   };
 }
 
@@ -473,6 +534,21 @@ export interface SharedPageButton extends Struct.ComponentSchema {
     FontHexColor: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'#FFFFFF'>;
+  };
+}
+
+export interface SharedPrivacyPolicy extends Struct.ComponentSchema {
+  collectionName: 'components_shared_privacy_policies';
+  info: {
+    displayName: 'privacyPolicy';
+  };
+  attributes: {
+    linkText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Privacy Policy.'>;
+    linkUrl: Schema.Attribute.String & Schema.Attribute.DefaultTo<'#'>;
+    text: Schema.Attribute.Text &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'I accept the terms of the'>;
   };
 }
 
@@ -546,23 +622,28 @@ declare module '@strapi/strapi' {
       'page.hero': PageHero;
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
+      'shared.address-lines': SharedAddressLines;
       'shared.bullet-points': SharedBulletPoints;
       'shared.button': SharedButton;
       'shared.carditem': SharedCarditem;
       'shared.carousel-items': SharedCarouselItems;
+      'shared.comtactus': SharedComtactus;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
       'shared.extension-row': SharedExtensionRow;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
+      'shared.gps-lines': SharedGpsLines;
       'shared.hero-section': SharedHeroSection;
       'shared.hero2': SharedHero2;
       'shared.left-expendable': SharedLeftExpendable;
+      'shared.location': SharedLocation;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
       'shared.media': SharedMedia;
       'shared.our-services': SharedOurServices;
       'shared.packaging-cards': SharedPackagingCards;
       'shared.page-button': SharedPageButton;
+      'shared.privacy-policy': SharedPrivacyPolicy;
       'shared.seo': SharedSeo;
       'shared.stats': SharedStats;
       'shared.store': SharedStore;

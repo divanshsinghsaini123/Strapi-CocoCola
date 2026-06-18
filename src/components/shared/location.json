@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_shared_locations",
+  "info": {
+    "displayName": "location"
+  },
+  "options": {},
+  "attributes": {
+    "mainTitle": {
+      "type": "string",
+      "default": "LOCATION",
+      "required": true
+    },
+    "detailsTitle": {
+      "type": "string",
+      "default": "LOCATIONS & CONTACTS",
+      "required": true
+    },
+    "addressLabel": {
+      "type": "string",
+      "default": "Factory address",
+      "required": true
+    },
+    "addressLines": {
+      "type": "component",
+      "component": "shared.address-lines",
+      "repeatable": true
+    },
+    "gpsLabel": {
+      "type": "string",
+      "default": "GPS coordinates:",
+      "required": true
+    },
+    "gpsLines": {
+      "type": "component",
+      "component": "shared.gps-lines",
+      "repeatable": false
+    },
+    "mapEmbedUrl": {
+      "type": "text",
+      "default": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2685.679135760633!2d20.91264707687258!3d48.176335548682855!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4740a1b0b5b5b5b5%3A0x5b0b5b5b5b5b5b5b!2sHell%20Energy%20Magyarorsz%C3%A1g%20Kft.!5e0!3m2!1sen!2shu!4v1708111111111!5m2!1sen!2shu",
+      "required": true
+    }
+  },
+  "config": {}
+}

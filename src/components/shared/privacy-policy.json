@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_privacy_policies",
+  "info": {
+    "displayName": "privacyPolicy"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text",
+      "default": "I accept the terms of the",
+      "required": true
+    },
+    "linkText": {
+      "type": "string",
+      "default": "Privacy Policy.",
+      "required": false
+    },
+    "linkUrl": {
+      "type": "string",
+      "default": "#",
+      "required": false
+    }
+  },
+  "config": {}
+}

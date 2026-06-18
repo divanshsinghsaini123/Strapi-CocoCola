@@ -30,6 +30,11 @@
       "type": "component",
       "component": "default.factoryhighlights",
       "repeatable": false
+    },
+    "contactus": {
+      "type": "component",
+      "component": "shared.comtactus",
+      "repeatable": false
     }
   }
 }

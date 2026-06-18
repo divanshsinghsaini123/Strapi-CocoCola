@@ -656,6 +656,7 @@ export interface ApiCofillingCofilling extends Struct.SingleTypeSchema {
   };
   attributes: {
     aboutus: Schema.Attribute.Component<'default.abooutus', false>;
+    contactus: Schema.Attribute.Component<'shared.comtactus', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
