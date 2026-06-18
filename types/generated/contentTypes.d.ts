@@ -676,6 +676,7 @@ export interface ApiCofillingCofilling extends Struct.SingleTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    whatwedoSection: Schema.Attribute.Component<'default.whatwedo', false>;
   };
 }
 

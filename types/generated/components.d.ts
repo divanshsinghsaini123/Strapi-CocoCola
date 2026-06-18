@@ -138,6 +138,21 @@ export interface DefaultSocialLink extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultWhatwedo extends Struct.ComponentSchema {
+  collectionName: 'components_default_whatwedos';
+  info: {
+    displayName: 'whatwedo';
+  };
+  attributes: {
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'WHAT WE DO '>;
+    logicstics: Schema.Attribute.Component<'shared.logistics', false>;
+    packaging: Schema.Attribute.Component<'shared.packaging', false>;
+    product: Schema.Attribute.Component<'shared.products', false>;
+  };
+}
+
 export interface PageCardsection extends Struct.ComponentSchema {
   collectionName: 'components_page_cardsections';
   info: {
@@ -233,6 +248,24 @@ export interface PageManufacturingComponent extends Struct.ComponentSchema {
       true
     >;
     Table_ComponentName: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface PageProductFooter extends Struct.ComponentSchema {
+  collectionName: 'components_page_product_footers';
+  info: {
+    displayName: 'productFooter';
+  };
+  attributes: {
+    backgroundimage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'TAKE ONE OF THESE!'>;
+    item: Schema.Attribute.Component<'shared.address-lines', true>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<"YOU DON'T HAVE A BRAND?">;
   };
 }
 
@@ -471,6 +504,21 @@ export interface SharedLocation extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedLogistics extends Struct.ComponentSchema {
+  collectionName: 'components_shared_logistics';
+  info: {
+    displayName: 'logistics';
+  };
+  attributes: {
+    backgroundImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    card: Schema.Attribute.Component<'shared.media', true>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'LOGISTICS'>;
+  };
+}
+
 export interface SharedManufacturerSDetails extends Struct.ComponentSchema {
   collectionName: 'components_shared_manufacturer_s_details';
   info: {
@@ -505,6 +553,19 @@ export interface SharedOurServices extends Struct.ComponentSchema {
     BulletPoint: Schema.Attribute.Component<'shared.bullet-points', true>;
     Heading: Schema.Attribute.String & Schema.Attribute.Required;
     SubHeading: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedPackaging extends Struct.ComponentSchema {
+  collectionName: 'components_shared_packagings';
+  info: {
+    displayName: 'packaging';
+  };
+  attributes: {
+    card: Schema.Attribute.Component<'shared.media', true>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'PACKAGING'>;
   };
 }
 
@@ -549,6 +610,16 @@ export interface SharedPrivacyPolicy extends Struct.ComponentSchema {
     text: Schema.Attribute.Text &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'I accept the terms of the'>;
+  };
+}
+
+export interface SharedProducts extends Struct.ComponentSchema {
+  collectionName: 'components_shared_products';
+  info: {
+    displayName: 'products';
+  };
+  attributes: {
+    productFooter: Schema.Attribute.Component<'page.product-footer', false>;
   };
 }
 
@@ -616,12 +687,14 @@ declare module '@strapi/strapi' {
       'default.hero2': DefaultHero2;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
+      'default.whatwedo': DefaultWhatwedo;
       'page.cardsection': PageCardsection;
       'page.follow-us-on': PageFollowUsOn;
       'page.footer-link': PageFooterLink;
       'page.hero': PageHero;
       'page.herosection': PageHerosection;
       'page.manufacturing-component': PageManufacturingComponent;
+      'page.product-footer': PageProductFooter;
       'shared.address-lines': SharedAddressLines;
       'shared.bullet-points': SharedBulletPoints;
       'shared.button': SharedButton;
@@ -638,12 +711,15 @@ declare module '@strapi/strapi' {
       'shared.hero2': SharedHero2;
       'shared.left-expendable': SharedLeftExpendable;
       'shared.location': SharedLocation;
+      'shared.logistics': SharedLogistics;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
       'shared.media': SharedMedia;
       'shared.our-services': SharedOurServices;
+      'shared.packaging': SharedPackaging;
       'shared.packaging-cards': SharedPackagingCards;
       'shared.page-button': SharedPageButton;
       'shared.privacy-policy': SharedPrivacyPolicy;
+      'shared.products': SharedProducts;
       'shared.seo': SharedSeo;
       'shared.stats': SharedStats;
       'shared.store': SharedStore;

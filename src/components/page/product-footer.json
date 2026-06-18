@@ -1,0 +1,34 @@
+{
+  "collectionName": "components_page_product_footers",
+  "info": {
+    "displayName": "productFooter"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundimage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "title": {
+      "type": "string",
+      "default": "YOU DON'T HAVE A BRAND?",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "default": "TAKE ONE OF THESE!",
+      "required": true
+    },
+    "item": {
+      "type": "component",
+      "component": "shared.address-lines",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

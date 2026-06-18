@@ -35,6 +35,11 @@
       "type": "component",
       "component": "shared.comtactus",
       "repeatable": false
+    },
+    "whatwedoSection": {
+      "type": "component",
+      "component": "default.whatwedo",
+      "repeatable": false
     }
   }
 }
