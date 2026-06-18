@@ -1,0 +1,62 @@
+{
+  "collectionName": "components_shared_productcards",
+  "info": {
+    "displayName": "productcard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "title"
+    },
+    "subtitle": {
+      "type": "string",
+      "required": true,
+      "default": "subtitle"
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "right",
+      "required": true
+    },
+    "productImage": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "totalColumns": {
+      "type": "enumeration",
+      "enum": [
+        "one",
+        "two"
+      ],
+      "default": "two",
+      "required": true
+    },
+    "flavours": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.flavours"
+    },
+    "features": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.features"
+    },
+    "subFeatures": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.features"
+    }
+  },
+  "config": {}
+}

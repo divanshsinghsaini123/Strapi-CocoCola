@@ -1,0 +1,20 @@
+{
+  "collectionName": "components_shared_flavours",
+  "info": {
+    "displayName": "flavours"
+  },
+  "options": {},
+  "attributes": {
+    "column1": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.column"
+    },
+    "column2": {
+      "type": "component",
+      "repeatable": false,
+      "component": "shared.column"
+    }
+  },
+  "config": {}
+}

@@ -339,6 +339,20 @@ export interface SharedCarouselItems extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedColumn extends Struct.ComponentSchema {
+  collectionName: 'components_shared_columns';
+  info: {
+    displayName: 'column';
+  };
+  attributes: {
+    columnsNumber: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<1>;
+    items: Schema.Attribute.Component<'shared.items', true>;
+    tittle: Schema.Attribute.String;
+  };
+}
+
 export interface SharedComtactus extends Struct.ComponentSchema {
   collectionName: 'components_shared_comtactuses';
   info: {
@@ -392,6 +406,27 @@ export interface SharedExtensionRow extends Struct.ComponentSchema {
     Department: Schema.Attribute.String;
     ExtensionNumber: Schema.Attribute.Integer;
     Name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFeatures extends Struct.ComponentSchema {
+  collectionName: 'components_shared_features';
+  info: {
+    displayName: 'features';
+  };
+  attributes: {
+    item: Schema.Attribute.String;
+  };
+}
+
+export interface SharedFlavours extends Struct.ComponentSchema {
+  collectionName: 'components_shared_flavours';
+  info: {
+    displayName: 'flavours';
+  };
+  attributes: {
+    column1: Schema.Attribute.Component<'shared.column', false>;
+    column2: Schema.Attribute.Component<'shared.column', false>;
   };
 }
 
@@ -464,6 +499,16 @@ export interface SharedHero2 extends Struct.ComponentSchema {
     Service: Schema.Attribute.Component<'shared.our-services', true>;
     SucessfulProjects: Schema.Attribute.String & Schema.Attribute.Required;
     YearsInBusiness: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
+export interface SharedItems extends Struct.ComponentSchema {
+  collectionName: 'components_shared_items';
+  info: {
+    displayName: 'items';
+  };
+  attributes: {
+    item: Schema.Attribute.String;
   };
 }
 
@@ -613,12 +658,39 @@ export interface SharedPrivacyPolicy extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedProductcard extends Struct.ComponentSchema {
+  collectionName: 'components_shared_productcards';
+  info: {
+    displayName: 'productcard';
+  };
+  attributes: {
+    features: Schema.Attribute.Component<'shared.features', true>;
+    flavours: Schema.Attribute.Component<'shared.flavours', false>;
+    layout: Schema.Attribute.Enumeration<['left', 'right']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'right'>;
+    productImage: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    subFeatures: Schema.Attribute.Component<'shared.features', true>;
+    subtitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'subtitle'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'title'>;
+    totalColumns: Schema.Attribute.Enumeration<['one', 'two']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'two'>;
+  };
+}
+
 export interface SharedProducts extends Struct.ComponentSchema {
   collectionName: 'components_shared_products';
   info: {
     displayName: 'products';
   };
   attributes: {
+    productcard: Schema.Attribute.Component<'shared.productcard', true>;
     productFooter: Schema.Attribute.Component<'page.product-footer', false>;
   };
 }
@@ -700,15 +772,19 @@ declare module '@strapi/strapi' {
       'shared.button': SharedButton;
       'shared.carditem': SharedCarditem;
       'shared.carousel-items': SharedCarouselItems;
+      'shared.column': SharedColumn;
       'shared.comtactus': SharedComtactus;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
       'shared.extension-row': SharedExtensionRow;
+      'shared.features': SharedFeatures;
+      'shared.flavours': SharedFlavours;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
       'shared.gps-lines': SharedGpsLines;
       'shared.hero-section': SharedHeroSection;
       'shared.hero2': SharedHero2;
+      'shared.items': SharedItems;
       'shared.left-expendable': SharedLeftExpendable;
       'shared.location': SharedLocation;
       'shared.logistics': SharedLogistics;
@@ -719,6 +795,7 @@ declare module '@strapi/strapi' {
       'shared.packaging-cards': SharedPackagingCards;
       'shared.page-button': SharedPageButton;
       'shared.privacy-policy': SharedPrivacyPolicy;
+      'shared.productcard': SharedProductcard;
       'shared.products': SharedProducts;
       'shared.seo': SharedSeo;
       'shared.stats': SharedStats;

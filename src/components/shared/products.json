@@ -9,6 +9,11 @@
       "type": "component",
       "component": "page.product-footer",
       "repeatable": false
+    },
+    "productcard": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.productcard"
     }
   },
   "config": {}
