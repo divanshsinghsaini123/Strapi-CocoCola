@@ -17,12 +17,12 @@
     "title": {
       "type": "string",
       "default": "YOU DON'T HAVE A BRAND?",
-      "required": true
+      "required": false
     },
     "heading": {
       "type": "string",
       "default": "TAKE ONE OF THESE!",
-      "required": true
+      "required": false
     },
     "item": {
       "type": "component",

@@ -13,7 +13,7 @@
     "mainheading": {
       "type": "string",
       "default": "HELL FACTORY HIGHLIGHTS",
-      "required": true
+      "required": false
     },
     "button": {
       "type": "component",
@@ -23,11 +23,11 @@
     },
     "youtubeURL1": {
       "type": "text",
-      "required": true
+      "required": false
     },
     "youtubeURL2": {
       "type": "text",
-      "required": true
+      "required": false
     }
   },
   "config": {}

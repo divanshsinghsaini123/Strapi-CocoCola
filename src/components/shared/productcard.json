@@ -7,55 +7,55 @@
   "attributes": {
     "title": {
       "type": "string",
-      "required": true,
-      "default": "title"
+      "default": "title",
+      "required": true
     },
     "subtitle": {
       "type": "string",
-      "required": true,
-      "default": "subtitle"
+      "default": "subtitle",
+      "required": false
     },
     "layout": {
       "type": "enumeration",
+      "required": true,
+      "default": "right",
       "enum": [
         "left",
         "right"
-      ],
-      "default": "right",
-      "required": true
+      ]
     },
     "productImage": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
-      ],
-      "type": "media",
-      "multiple": false,
-      "required": true
+      ]
     },
     "totalColumns": {
       "type": "enumeration",
+      "required": true,
+      "default": "two",
       "enum": [
         "one",
         "two"
-      ],
-      "default": "two",
-      "required": true
+      ]
     },
     "flavours": {
       "type": "component",
-      "repeatable": false,
-      "component": "shared.flavours"
+      "component": "shared.flavours",
+      "repeatable": false
     },
     "features": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.features"
+      "component": "shared.features",
+      "repeatable": true
     },
     "subFeatures": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.features"
+      "component": "shared.features",
+      "repeatable": true
     }
   },
   "config": {}

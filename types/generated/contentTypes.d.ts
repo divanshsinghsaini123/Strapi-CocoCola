@@ -821,6 +821,7 @@ export interface ApiExtraExtra extends Struct.SingleTypeSchema {
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::extra.extra'> &
       Schema.Attribute.Private;
+    navLinks: Schema.Attribute.Component<'default.nav-links', true>;
     publishedAt: Schema.Attribute.DateTime;
     StickyNavbar: Schema.Attribute.Boolean &
       Schema.Attribute.Required &

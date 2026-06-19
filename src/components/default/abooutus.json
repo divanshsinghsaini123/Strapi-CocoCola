@@ -8,12 +8,12 @@
     "sectionheading": {
       "type": "string",
       "default": "ABOUT US",
-      "required": true
+      "required": false
     },
     "backgroundimage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"
@@ -22,7 +22,7 @@
     "logo": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "files",
         "images"

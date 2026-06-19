@@ -6,14 +6,11 @@ export interface DefaultAbooutus extends Struct.ComponentSchema {
     displayName: 'abooutus';
   };
   attributes: {
-    backgroundimage: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    backgroundimage: Schema.Attribute.Media<'images' | 'files'>;
     button: Schema.Attribute.Component<'shared.button', false>;
     carouselItems: Schema.Attribute.Component<'shared.carousel-items', true>;
-    logo: Schema.Attribute.Media<'files' | 'images'> &
-      Schema.Attribute.Required;
+    logo: Schema.Attribute.Media<'files' | 'images'>;
     sectionheading: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'ABOUT US'>;
   };
 }
@@ -43,13 +40,12 @@ export interface DefaultFactoryhighlights extends Struct.ComponentSchema {
   attributes: {
     button: Schema.Attribute.Component<'shared.button', false>;
     mainheading: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'HELL FACTORY HIGHLIGHTS'>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'WATCH OUR INTRO VIDEO'>;
-    youtubeURL1: Schema.Attribute.Text & Schema.Attribute.Required;
-    youtubeURL2: Schema.Attribute.Text & Schema.Attribute.Required;
+    youtubeURL1: Schema.Attribute.Text;
+    youtubeURL2: Schema.Attribute.Text;
   };
 }
 
@@ -144,6 +140,22 @@ export interface DefaultHero2 extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultNavLinks extends Struct.ComponentSchema {
+  collectionName: 'components_default_nav_links';
+  info: {
+    displayName: 'navLinks';
+    icon: 'cursor';
+  };
+  attributes: {
+    dropdownContent: Schema.Attribute.Component<'shared.footer-link', true>;
+    hasChevron: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface DefaultQAndA extends Struct.ComponentSchema {
   collectionName: 'components_default_q_and_as';
   info: {
@@ -221,7 +233,6 @@ export interface DefaultWhatwedo extends Struct.ComponentSchema {
   };
   attributes: {
     heading: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'WHAT WE DO '>;
     logicstics: Schema.Attribute.Component<'shared.logistics', false>;
     packaging: Schema.Attribute.Component<'shared.packaging', false>;
@@ -235,6 +246,7 @@ export interface PageCardsection extends Struct.ComponentSchema {
     displayName: 'Cardsection';
   };
   attributes: {
+    endbutton: Schema.Attribute.Component<'shared.button', false>;
     items: Schema.Attribute.Component<'shared.carditem', true>;
     sectionTitle: Schema.Attribute.String & Schema.Attribute.Required;
   };
@@ -336,11 +348,9 @@ export interface PageProductFooter extends Struct.ComponentSchema {
     backgroundimage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     heading: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'TAKE ONE OF THESE!'>;
     item: Schema.Attribute.Component<'shared.address-lines', true>;
     title: Schema.Attribute.String &
-      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<"YOU DON'T HAVE A BRAND?">;
   };
 }
@@ -380,7 +390,7 @@ export interface SharedButton extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'/'>;
     buttonText: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'GET IN TOUCH'>;
+      Schema.Attribute.DefaultTo<'View all Offerings'>;
     disablebutton: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
@@ -631,12 +641,9 @@ export interface SharedLogistics extends Struct.ComponentSchema {
     displayName: 'logistics';
   };
   attributes: {
-    backgroundImage: Schema.Attribute.Media<'images' | 'files'> &
-      Schema.Attribute.Required;
+    backgroundImage: Schema.Attribute.Media<'images' | 'files'>;
     card: Schema.Attribute.Component<'shared.media', true>;
-    heading: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'LOGISTICS'>;
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'LOGISTICS'>;
   };
 }
 
@@ -684,9 +691,7 @@ export interface SharedPackaging extends Struct.ComponentSchema {
   };
   attributes: {
     card: Schema.Attribute.Component<'shared.media', true>;
-    heading: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'PACKAGING'>;
+    heading: Schema.Attribute.String & Schema.Attribute.DefaultTo<'PACKAGING'>;
   };
 }
 
@@ -748,9 +753,7 @@ export interface SharedProductcard extends Struct.ComponentSchema {
     productImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     subFeatures: Schema.Attribute.Component<'shared.features', true>;
-    subtitle: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.DefaultTo<'subtitle'>;
+    subtitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'subtitle'>;
     title: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'title'>;
@@ -835,6 +838,7 @@ declare module '@strapi/strapi' {
       'default.hero': DefaultHero;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
       'default.hero2': DefaultHero2;
+      'default.nav-links': DefaultNavLinks;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
       'default.stages': DefaultStages;

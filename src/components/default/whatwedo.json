@@ -8,7 +8,7 @@
     "heading": {
       "type": "string",
       "default": "WHAT WE DO ",
-      "required": true
+      "required": false
     },
     "product": {
       "type": "component",

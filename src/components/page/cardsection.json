@@ -13,6 +13,11 @@
       "type": "component",
       "component": "shared.carditem",
       "repeatable": true
+    },
+    "endbutton": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}

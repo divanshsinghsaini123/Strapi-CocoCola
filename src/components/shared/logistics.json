@@ -8,12 +8,12 @@
     "heading": {
       "type": "string",
       "default": "LOGISTICS",
-      "required": true
+      "required": false
     },
     "backgroundImage": {
       "type": "media",
       "multiple": false,
-      "required": true,
+      "required": false,
       "allowedTypes": [
         "images",
         "files"

@@ -8,7 +8,7 @@
     "heading": {
       "type": "string",
       "default": "PACKAGING",
-      "required": true
+      "required": false
     },
     "card": {
       "type": "component",

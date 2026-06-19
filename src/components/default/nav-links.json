@@ -1,25 +1,28 @@
 {
-  "collectionName": "components_shared_buttons",
+  "collectionName": "components_default_nav_links",
   "info": {
-    "displayName": "button",
+    "displayName": "navLinks",
     "icon": "cursor"
   },
   "options": {},
   "attributes": {
-    "buttonText": {
+    "label": {
       "type": "string",
-      "default": "View all Offerings",
       "required": true
     },
-    "buttonLink": {
+    "href": {
       "type": "string",
-      "default": "/",
       "required": true
     },
-    "disablebutton": {
+    "hasChevron": {
       "type": "boolean",
       "required": true,
       "default": false
+    },
+    "dropdownContent": {
+      "type": "component",
+      "component": "shared.footer-link",
+      "repeatable": true
     }
   },
   "config": {}
