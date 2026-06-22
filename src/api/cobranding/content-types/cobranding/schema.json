@@ -21,6 +21,11 @@
       "component": "default.stages",
       "repeatable": true
     },
+    "callToActionCard": {
+      "type": "component",
+      "component": "default.call-to-action-card",
+      "repeatable": false
+    },
     "Cards": {
       "type": "component",
       "component": "shared.packaging-cards",

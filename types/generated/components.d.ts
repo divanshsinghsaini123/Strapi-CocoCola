@@ -18,6 +18,23 @@ export interface DefaultAbooutus extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultCallToActionCard extends Struct.ComponentSchema {
+  collectionName: 'components_default_call_to_action_cards';
+  info: {
+    displayName: 'call to action card';
+  };
+  attributes: {
+    button: Schema.Attribute.Component<'shared.button', false> &
+      Schema.Attribute.Required;
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Let\u2019s create a powerful identity that stands out in the market and connects with your audience.'>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Ready to manifest your brand?'>;
+  };
+}
+
 export interface DefaultFactoryhighlights extends Struct.ComponentSchema {
   collectionName: 'components_default_factoryhighlights';
   info: {
@@ -811,6 +828,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'default.abooutus': DefaultAbooutus;
+      'default.call-to-action-card': DefaultCallToActionCard;
       'default.factoryhighlights': DefaultFactoryhighlights;
       'default.faq': DefaultFaq;
       'default.footer-section': DefaultFooterSection;

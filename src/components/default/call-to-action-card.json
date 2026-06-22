@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_default_call_to_action_cards",
+  "info": {
+    "displayName": "call to action card"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "default": "Ready to manifest your brand?",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "default": "Let’s create a powerful identity that stands out in the market and connects with your audience.",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -621,6 +621,10 @@ export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
+    callToActionCard: Schema.Attribute.Component<
+      'default.call-to-action-card',
+      false
+    >;
     Cards: Schema.Attribute.Component<'shared.packaging-cards', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
