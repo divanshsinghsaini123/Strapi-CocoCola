@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_default_heroes",
+  "info": {
+    "displayName": "hero"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Process",
+      "required": true
+    },
+    "headline1": {
+      "type": "string",
+      "default": "Our process builds successful brands.",
+      "required": true
+    },
+    "headline2": {
+      "type": "string",
+      "default": "successful brands.",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "default": "Transforming ideas into powerful identities through a strategic, proven framework designed for growth and market leadership.",
+      "required": true
+    }
+  },
+  "config": {}
+}

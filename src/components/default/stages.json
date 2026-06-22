@@ -1,0 +1,46 @@
+{
+  "collectionName": "components_default_stages",
+  "info": {
+    "displayName": "stages"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": "Stage 01",
+      "required": true
+    },
+    "heading": {
+      "type": "string",
+      "default": "Audit",
+      "required": true
+    },
+    "description": {
+      "type": "string",
+      "default": "We study your brand, customers, and competition to understand the real problem.",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "required": true,
+      "default": "search",
+      "enum": [
+        "search",
+        "compass",
+        "palette",
+        "rocket",
+        "trending-up",
+        "lightbulb",
+        "target",
+        "wrench",
+        "handshake",
+        "package",
+        "beaker",
+        "globe",
+        "zap",
+        "shield"
+      ]
+    }
+  },
+  "config": {}
+}

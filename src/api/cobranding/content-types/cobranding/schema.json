@@ -11,15 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "Card1": {
+    "hero": {
       "type": "component",
-      "component": "shared.packaging-cards",
+      "component": "default.hero",
       "repeatable": false
     },
-    "card2": {
+    "stages": {
+      "type": "component",
+      "component": "default.stages",
+      "repeatable": true
+    },
+    "Cards": {
       "type": "component",
       "component": "shared.packaging-cards",
-      "repeatable": false
+      "repeatable": true
     },
     "SEO": {
       "type": "component",

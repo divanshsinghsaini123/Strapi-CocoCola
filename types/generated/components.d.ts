@@ -61,6 +61,27 @@ export interface DefaultFooterSection extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultHero extends Struct.ComponentSchema {
+  collectionName: 'components_default_heroes';
+  info: {
+    displayName: 'hero';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Transforming ideas into powerful identities through a strategic, proven framework designed for growth and market leadership.'>;
+    headline1: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Our process builds successful brands.'>;
+    headline2: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'successful brands.'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Process'>;
+  };
+}
+
 export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
   collectionName: 'components_default_hero_section_aboutuses';
   info: {
@@ -135,6 +156,44 @@ export interface DefaultSocialLink extends Struct.ComponentSchema {
     Instagram: Schema.Attribute.Component<'shared.footer-link', false>;
     X: Schema.Attribute.Component<'shared.footer-link', false>;
     Youtube: Schema.Attribute.Component<'shared.footer-link', false>;
+  };
+}
+
+export interface DefaultStages extends Struct.ComponentSchema {
+  collectionName: 'components_default_stages';
+  info: {
+    displayName: 'stages';
+  };
+  attributes: {
+    description: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'We study your brand, customers, and competition to understand the real problem.'>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Audit'>;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'search',
+        'compass',
+        'palette',
+        'rocket',
+        'trending-up',
+        'lightbulb',
+        'target',
+        'wrench',
+        'handshake',
+        'package',
+        'beaker',
+        'globe',
+        'zap',
+        'shield',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'search'>;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Stage 01'>;
   };
 }
 
@@ -755,10 +814,12 @@ declare module '@strapi/strapi' {
       'default.factoryhighlights': DefaultFactoryhighlights;
       'default.faq': DefaultFaq;
       'default.footer-section': DefaultFooterSection;
+      'default.hero': DefaultHero;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
       'default.hero2': DefaultHero2;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
+      'default.stages': DefaultStages;
       'default.whatwedo': DefaultWhatwedo;
       'page.cardsection': PageCardsection;
       'page.follow-us-on': PageFollowUsOn;

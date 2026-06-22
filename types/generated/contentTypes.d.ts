@@ -621,14 +621,14 @@ export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    Card1: Schema.Attribute.Component<'shared.packaging-cards', false>;
-    card2: Schema.Attribute.Component<'shared.packaging-cards', false>;
+    Cards: Schema.Attribute.Component<'shared.packaging-cards', true>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     DisablePage: Schema.Attribute.Boolean &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<false>;
+    hero: Schema.Attribute.Component<'default.hero', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -638,6 +638,7 @@ export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
     PageButton: Schema.Attribute.Component<'shared.page-button', false>;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
+    stages: Schema.Attribute.Component<'default.stages', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
