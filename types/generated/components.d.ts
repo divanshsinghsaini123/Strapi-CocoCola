@@ -696,7 +696,7 @@ export interface SharedPackagingCards extends Struct.ComponentSchema {
     displayName: 'Packaging Cards';
   };
   attributes: {
-    ButtonName: Schema.Attribute.String & Schema.Attribute.Required;
+    button: Schema.Attribute.Component<'shared.button', false>;
     CardImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
     CardName: Schema.Attribute.String;

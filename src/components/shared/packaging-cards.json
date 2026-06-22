@@ -21,9 +21,10 @@
       "type": "string",
       "required": true
     },
-    "ButtonName": {
-      "type": "string",
-      "required": true
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}
