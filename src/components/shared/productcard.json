@@ -56,6 +56,15 @@
       "type": "component",
       "component": "shared.features",
       "repeatable": true
+    },
+    "productImage_mobile": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
     }
   },
   "config": {}

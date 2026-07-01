@@ -752,6 +752,8 @@ export interface SharedProductcard extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'right'>;
     productImage: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    productImage_mobile: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
     subFeatures: Schema.Attribute.Component<'shared.features', true>;
     subtitle: Schema.Attribute.String & Schema.Attribute.DefaultTo<'subtitle'>;
     title: Schema.Attribute.String &
