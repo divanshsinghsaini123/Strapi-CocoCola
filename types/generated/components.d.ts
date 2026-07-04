@@ -105,6 +105,9 @@ export interface DefaultHeroSectionAboutus extends Struct.ComponentSchema {
       'images' | 'files' | 'videos' | 'audios'
     > &
       Schema.Attribute.Required;
+    HeroBannerText: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Our Company'>;
+    HeroBannerTextColor: Schema.Attribute.String;
     paragraph1: Schema.Attribute.Text &
       Schema.Attribute.SetMinMaxLength<{
         maxLength: 350;

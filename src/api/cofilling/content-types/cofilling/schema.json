@@ -31,14 +31,14 @@
       "component": "default.factoryhighlights",
       "repeatable": false
     },
-    "contactus": {
-      "type": "component",
-      "component": "shared.comtactus",
-      "repeatable": false
-    },
     "whatwedoSection": {
       "type": "component",
       "component": "default.whatwedo",
+      "repeatable": false
+    },
+    "contactus": {
+      "type": "component",
+      "component": "shared.comtactus",
       "repeatable": false
     },
     "SEO": {

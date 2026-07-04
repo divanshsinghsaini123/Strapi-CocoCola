@@ -5,15 +5,15 @@
   },
   "options": {},
   "attributes": {
+    "productcard": {
+      "type": "component",
+      "component": "shared.productcard",
+      "repeatable": true
+    },
     "productFooter": {
       "type": "component",
       "component": "page.product-footer",
       "repeatable": false
-    },
-    "productcard": {
-      "type": "component",
-      "repeatable": true,
-      "component": "shared.productcard"
     }
   },
   "config": {}

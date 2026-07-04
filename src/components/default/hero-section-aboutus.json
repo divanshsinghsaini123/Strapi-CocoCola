@@ -16,6 +16,14 @@
         "audios"
       ]
     },
+    "HeroBannerText": {
+      "type": "string",
+      "default": "Our Company",
+      "required": false
+    },
+    "HeroBannerTextColor": {
+      "type": "string"
+    },
     "paragraph1": {
       "type": "text",
       "minLength": 50,

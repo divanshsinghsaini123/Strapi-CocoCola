@@ -28,15 +28,15 @@
         "images"
       ]
     },
-    "button": {
-      "type": "component",
-      "component": "shared.button",
-      "repeatable": false
-    },
     "carouselItems": {
       "type": "component",
       "component": "shared.carousel-items",
       "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": false
     }
   },
   "config": {}
