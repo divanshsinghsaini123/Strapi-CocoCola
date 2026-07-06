@@ -456,6 +456,26 @@ export interface SharedComtactus extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedCustomScript extends Struct.ComponentSchema {
+  collectionName: 'components_shared_custom_scripts';
+  info: {
+    displayName: 'Custom Script';
+    icon: 'code';
+  };
+  attributes: {
+    enabled: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<true>;
+    position: Schema.Attribute.Enumeration<['Head', 'BodyStart', 'BodyEnd']> &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'BodyEnd'>;
+    scriptCode: Schema.Attribute.Text & Schema.Attribute.Required;
+    scriptName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
 export interface SharedEventComponent extends Struct.ComponentSchema {
   collectionName: 'components_shared_event_components';
   info: {
@@ -862,6 +882,7 @@ declare module '@strapi/strapi' {
       'shared.carousel-items': SharedCarouselItems;
       'shared.column': SharedColumn;
       'shared.comtactus': SharedComtactus;
+      'shared.custom-script': SharedCustomScript;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;
       'shared.extension-row': SharedExtensionRow;
