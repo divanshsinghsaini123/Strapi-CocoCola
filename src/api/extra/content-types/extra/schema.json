@@ -26,6 +26,44 @@
       "type": "component",
       "component": "default.nav-links",
       "repeatable": true
+    },
+    "companyName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "companyEmail": {
+      "type": "email",
+      "required": true
+    },
+    "companyPhone": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "companyAddress": {
+      "type": "text",
+      "required": true
+    },
+    "copyrightText": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "defaultKeywords": {
+      "type": "text"
+    },
+    "googleAnalyticsId": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "metaPixelId": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "customScripts": {
+      "type": "component",
+      "component": "shared.custom-script",
+      "repeatable": true
     }
   }
 }
