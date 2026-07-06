@@ -1,0 +1,49 @@
+{
+  "collectionName": "components_shared_global_configs",
+  "info": {
+    "displayName": "Global Config",
+    "icon": "cog"
+  },
+  "options": {},
+  "attributes": {
+    "companyName": {
+      "type": "string",
+      "required": true,
+      "maxLength": 255
+    },
+    "companyEmail": {
+      "type": "email",
+      "required": true
+    },
+    "companyPhone": {
+      "type": "string",
+      "required": true,
+      "maxLength": 20
+    },
+    "companyAddress": {
+      "type": "text",
+      "required": true
+    },
+    "copyrightText": {
+      "type": "string",
+      "maxLength": 255
+    },
+    "defaultKeywords": {
+      "type": "text"
+    },
+    "googleAnalyticsId": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "metaPixelId": {
+      "type": "string",
+      "maxLength": 100
+    },
+    "customScripts": {
+      "type": "component",
+      "component": "shared.custom-script",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -818,6 +818,7 @@ export interface ApiExtraExtra extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    globalConfig: Schema.Attribute.Component<'shared.global-config', false>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::extra.extra'> &
       Schema.Attribute.Private;

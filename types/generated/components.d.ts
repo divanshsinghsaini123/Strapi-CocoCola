@@ -568,6 +568,42 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedGlobalConfig extends Struct.ComponentSchema {
+  collectionName: 'components_shared_global_configs';
+  info: {
+    displayName: 'Global Config';
+    icon: 'cog';
+  };
+  attributes: {
+    companyAddress: Schema.Attribute.Text & Schema.Attribute.Required;
+    companyEmail: Schema.Attribute.Email & Schema.Attribute.Required;
+    companyName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    companyPhone: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 20;
+      }>;
+    copyrightText: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+    customScripts: Schema.Attribute.Component<'shared.custom-script', true>;
+    defaultKeywords: Schema.Attribute.Text;
+    googleAnalyticsId: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+    metaPixelId: Schema.Attribute.String &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 100;
+      }>;
+  };
+}
+
 export interface SharedGpsLines extends Struct.ComponentSchema {
   collectionName: 'components_shared_gps_lines';
   info: {
@@ -890,6 +926,7 @@ declare module '@strapi/strapi' {
       'shared.flavours': SharedFlavours;
       'shared.footer-link': SharedFooterLink;
       'shared.footer-section': SharedFooterSection;
+      'shared.global-config': SharedGlobalConfig;
       'shared.gps-lines': SharedGpsLines;
       'shared.hero-section': SharedHeroSection;
       'shared.hero2': SharedHero2;

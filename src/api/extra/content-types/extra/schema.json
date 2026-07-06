@@ -16,54 +16,21 @@
       "required": true,
       "default": false
     },
+    "navLinks": {
+      "type": "component",
+      "component": "default.nav-links",
+      "repeatable": true
+    },
     "Copyright": {
       "type": "string",
       "default": "© 2025 The Cloud9 Beverages Company. All rights reserved.",
       "maxLength": 100,
       "required": true
     },
-    "navLinks": {
+    "globalConfig": {
       "type": "component",
-      "component": "default.nav-links",
-      "repeatable": true
-    },
-    "companyName": {
-      "type": "string",
-      "required": true,
-      "maxLength": 255
-    },
-    "companyEmail": {
-      "type": "email",
-      "required": true
-    },
-    "companyPhone": {
-      "type": "string",
-      "required": true,
-      "maxLength": 20
-    },
-    "companyAddress": {
-      "type": "text",
-      "required": true
-    },
-    "copyrightText": {
-      "type": "string",
-      "maxLength": 255
-    },
-    "defaultKeywords": {
-      "type": "text"
-    },
-    "googleAnalyticsId": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "metaPixelId": {
-      "type": "string",
-      "maxLength": 100
-    },
-    "customScripts": {
-      "type": "component",
-      "component": "shared.custom-script",
-      "repeatable": true
+      "component": "shared.global-config",
+      "repeatable": false
     }
   }
 }
