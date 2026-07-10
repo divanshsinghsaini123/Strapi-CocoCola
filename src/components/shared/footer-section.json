@@ -12,9 +12,7 @@
     "links": {
       "type": "component",
       "component": "shared.footer-link",
-      "repeatable": true,
-      "min": 2,
-      "max": 10
+      "repeatable": true
     }
   },
   "config": {}
