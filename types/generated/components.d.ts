@@ -556,6 +556,14 @@ export interface SharedFooterSection extends Struct.ComponentSchema {
     displayName: 'Footer Section';
   };
   attributes: {
+    links: Schema.Attribute.Component<'shared.footer-link', true> &
+      Schema.Attribute.SetMinMax<
+        {
+          max: 10;
+          min: 1;
+        },
+        number
+      >;
     links: Schema.Attribute.Component<'shared.footer-link', true>;
     LinkSectionName: Schema.Attribute.String & Schema.Attribute.Required;
   };
