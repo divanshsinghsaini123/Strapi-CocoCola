@@ -32,7 +32,7 @@
     "button": {
       "type": "component",
       "component": "shared.button",
-      "repeatable": true
+      "repeatable": false
     }
   },
   "config": {}

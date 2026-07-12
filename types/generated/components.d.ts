@@ -40,7 +40,7 @@ export interface DefaultCards extends Struct.ComponentSchema {
   attributes: {
     accentColor: Schema.Attribute.String;
     bgColor: Schema.Attribute.String;
-    button: Schema.Attribute.Component<'shared.button', true>;
+    button: Schema.Attribute.Component<'shared.button', false>;
     description: Schema.Attribute.String;
     image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
