@@ -32,6 +32,23 @@ export interface DefaultCallToActionCard extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultCards extends Struct.ComponentSchema {
+  collectionName: 'components_default_cards';
+  info: {
+    displayName: 'Cards';
+  };
+  attributes: {
+    accentColor: Schema.Attribute.String;
+    bgColor: Schema.Attribute.String;
+    button: Schema.Attribute.Component<'shared.button', true>;
+    description: Schema.Attribute.String;
+    image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    tagline: Schema.Attribute.String;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface DefaultFactoryhighlights extends Struct.ComponentSchema {
   collectionName: 'components_default_factoryhighlights';
   info: {
@@ -893,6 +910,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'default.abooutus': DefaultAbooutus;
       'default.call-to-action-card': DefaultCallToActionCard;
+      'default.cards': DefaultCards;
       'default.factoryhighlights': DefaultFactoryhighlights;
       'default.faq': DefaultFaq;
       'default.footer-section': DefaultFooterSection;

@@ -885,6 +885,34 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiLandingPageLandingPage extends Struct.SingleTypeSchema {
+  collectionName: 'landing_pages';
+  info: {
+    displayName: 'Landing Page';
+    pluralName: 'landing-pages';
+    singularName: 'landing-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Card: Schema.Attribute.Component<'default.cards', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::landing-page.landing-page'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiManufacturingListManufacturingList
   extends Struct.SingleTypeSchema {
   collectionName: 'manufacturing_lists';
@@ -1480,6 +1508,7 @@ declare module '@strapi/strapi' {
       'api::extension-page.extension-page': ApiExtensionPageExtensionPage;
       'api::extra.extra': ApiExtraExtra;
       'api::home-page.home-page': ApiHomePageHomePage;
+      'api::landing-page.landing-page': ApiLandingPageLandingPage;
       'api::manufacturing-list.manufacturing-list': ApiManufacturingListManufacturingList;
       'api::store-locator.store-locator': ApiStoreLocatorStoreLocator;
       'plugin::content-releases.release': PluginContentReleasesRelease;
