@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_default_cards",
+  "info": {
+    "displayName": "Cards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "bgColor": {
+      "type": "string"
+    },
+    "accentColor": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "shared.button",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}
