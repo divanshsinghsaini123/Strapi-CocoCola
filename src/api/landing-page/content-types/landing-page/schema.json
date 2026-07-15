@@ -15,6 +15,11 @@
       "type": "component",
       "component": "default.cards",
       "repeatable": true
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }
