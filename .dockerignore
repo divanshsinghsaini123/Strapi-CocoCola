@@ -1,0 +1,12 @@
+Dockerfile
+.dockerignore
+node_modules
+.tmp
+.cache
+dist
+build
+.git
+.gitignore
+README.md
+*.log
+backup.dump

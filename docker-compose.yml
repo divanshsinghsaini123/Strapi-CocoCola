@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  strapi:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: strapi-cocacola
+    restart: always
+    ports:
+      - "1337:1337"
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=1337
