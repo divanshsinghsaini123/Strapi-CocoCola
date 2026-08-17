@@ -1,18 +1,15 @@
-# Creating multi-stage build for Strapi v5
-FROM node:20-alpine AS build
+# Multi-stage Dockerfile for Strapi v5 using Debian Slim (Recommended for sharp & native C++ bindings)
+FROM node:20-bookworm-slim AS build
 
-# Installing libvips-dev and build tools for sharp & native C++ bindings
-RUN apk update && apk add --no-cache \
-    build-base \
+RUN apt-get update && apt-get install -y \
+    build-essential \
     gcc \
     autoconf \
     automake \
-    zlib-dev \
-    libpng-dev \
-    nasm \
-    bash \
-    vips-dev \
-    git
+    libvips-dev \
+    git \
+    python3 \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/
 COPY package.json package-lock.json ./
@@ -24,10 +21,10 @@ COPY . .
 ENV NODE_ENV=production
 RUN npm run build
 
-# Production image
-FROM node:20-alpine AS runner
+# Production stage
+FROM node:20-bookworm-slim AS runner
 
-RUN apk add --no-cache vips-dev
+RUN apt-get update && apt-get install -y libvips-dev && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /opt/
 COPY --from=build /opt/node_modules ./node_modules
