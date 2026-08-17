@@ -18,17 +18,17 @@ jobs:
       - name: Create Backup
         run: |
           docker run --rm \
-            -e PGPASSWORD="${{ secrets.DB_PASSWORD }}" \
-            -e PGSSLMODE=require \
-            -v "${{ github.workspace }}:/backup" \
-            postgres:18 \
-            pg_dump \
-            -h "${{ secrets.DB_HOST }}" \
-            -p "${{ secrets.DB_PORT }}" \
-            -U "${{ secrets.DB_USER }}" \
-            -d "${{ secrets.DB_NAME }}" \
-            -F c \
-            -f /backup/backup.dump
+              -e PGPASSWORD="${{ secrets.DB_PASSWORD }}" \
+              -e PGSSLMODE=require \
+              -v "${{ github.workspace }}:/backup" \
+              postgres:16 \
+              pg_dump \
+              -h "${{ secrets.DB_HOST }}" \
+              -p "${{ secrets.DB_PORT }}" \
+              -U "${{ secrets.DB_USER }}" \
+              -d "${{ secrets.DB_NAME }}" \
+              -F p \
+              -f /backup/backup.sql
 
       - name: Verify Backup
         run: |
