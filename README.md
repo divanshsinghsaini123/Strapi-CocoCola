@@ -85,5 +85,23 @@ $env:PGSSLMODE="require"
 -d restore_test `
 "backup.dump"
 
+
+
+
+$env:PGPASSWORD="YOUR_PASSWORD"
+$env:PGSSLMODE="require"
+
+& "C:\Program Files\PostgreSQL\18\bin\pg_dump.exe" `
+-h YOUR_HOST `
+-p 25060 `
+-U doadmin `
+-d restore_test `
+-f backup.sql
+
 # This restores the backup into a separate database without affecting production.
+
+# now to dump this file into database 
+
+
+
 
