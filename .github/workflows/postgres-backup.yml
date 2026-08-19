@@ -10,10 +10,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Get current date and time
+        id: date
+        run: echo "TIMESTAMP=$(date +'%Y-%m-%d_%H-%M-%S')" >> $GITHUB_ENV
+
       - name: Check Docker and PostgreSQL Version
         run: |
           docker --version
-          docker run --rm postgres:18 pg_dump --version
+          docker run --rm postgres:16 pg_dump --version
 
       - name: Create Backup
         run: |
@@ -28,21 +35,20 @@ jobs:
               -U "${{ secrets.DB_USER }}" \
               -d "${{ secrets.DB_NAME }}" \
               -F p \
-              -f /backup/backup.sql
+              -f "/backup/backup_${{ env.TIMESTAMP }}.sql"
 
       - name: Verify Backup
         run: |
-          ls -lh
-          ls -lh backup.dump
+          ls -lh backup_${{ env.TIMESTAMP }}.sql
 
       - name: Compress Backup
-        run: gzip backup.dump
+        run: gzip backup_${{ env.TIMESTAMP }}.sql
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: postgres-backup
-          path: backup.dump.gz
+          name: postgres-backup-${{ env.TIMESTAMP }}
+          path: backup_${{ env.TIMESTAMP }}.sql.gz
           retention-days: 90
 
       - name: Send Email
@@ -53,13 +59,14 @@ jobs:
           secure: true
           username: ${{ secrets.EMAIL_USERNAME }}
           password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: PostgreSQL Backup Successful
+          subject: PostgreSQL Backup Successful (${{ env.TIMESTAMP }})
           to: ${{ secrets.EMAIL_TO }}
           from: ${{ secrets.EMAIL_USERNAME }}
-          attachments: backup.dump.gz
+          attachments: backup_${{ env.TIMESTAMP }}.sql.gz
           body: |
-            PostgreSQL backup completed successfully.
+            PostgreSQL backup completed successfully on ${{ env.TIMESTAMP }}.
       
+            Backup file: backup_${{ env.TIMESTAMP }}.sql.gz
             Backup has been uploaded as a GitHub Artifact.
       
             Google Drive Folder:
@@ -69,4 +76,4 @@ jobs:
             1. Open GitHub Repository
             2. Go to Actions
             3. Open latest "PostgreSQL Backup" run
-            4. Download artifact: postgres-backup
+            4. Download artifact: postgres-backup-${{ env.TIMESTAMP }}
