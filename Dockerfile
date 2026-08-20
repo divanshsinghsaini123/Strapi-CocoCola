@@ -1,4 +1,4 @@
-# Multi-stage Dockerfile for Strapi v5 using Debian Slim (Recommended for sharp & native C++ bindings)
+# Multi-stage Dockerfiles for Strapi v5 using Debian Slim (Recommended for sharp & native C++ bindings)
 FROM node:20-bookworm-slim AS build
 
 RUN apt-get update && apt-get install -y \
