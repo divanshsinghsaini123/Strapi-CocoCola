@@ -20,13 +20,13 @@ jobs:
           port: ${{ secrets.SERVER_PORT || 22 }}
           script: |
             echo "🚀 Navigating to Strapi directory..."
-            cd /root/apps/Strapi-CocoCola
+            cd /root/apps/cloud9/Strapi-CocoCola
             
             echo "📥 Pulling latest Strapi code..."
             git pull origin ${{ github.ref_name }}
             
             echo "🐳 Rebuilding Strapi container..."
-            docker compose up --build -d strapi
+            docker compose up --build -d cloud9-strapi
             
             echo "🧹 Cleaning up unused images..."
             docker image prune -f
