@@ -686,6 +686,46 @@ export interface ApiCofillingCofilling extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiContactHubContactHub extends Struct.SingleTypeSchema {
+  collectionName: 'contact_hub';
+  info: {
+    displayName: 'Contact hub';
+    pluralName: 'contact-hubs';
+    singularName: 'contact-hub';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Contact_email: Schema.Attribute.Email & Schema.Attribute.Required;
+    Contact_number: Schema.Attribute.String & Schema.Attribute.Required;
+    ContactCards: Schema.Attribute.Component<'shared.contact-card', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    DisablePage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    HeroBadge: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'Contact Hub'>;
+    HeroDescription: Schema.Attribute.Text &
+      Schema.Attribute.DefaultTo<'Select the category that best matches your request below to get redirected to the right team.'>;
+    HeroTitle: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'How Can We Help You Today?'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::contact-hub.contact-hub'
+    > &
+      Schema.Attribute.Private;
+    Privacy_policy_page: Schema.Attribute.Blocks;
+    publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'shared.seo', false>;
+    Terms_of_use: Schema.Attribute.Blocks;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiContactusPageContactusPage extends Struct.SingleTypeSchema {
   collectionName: 'contactus_pages';
   info: {
@@ -1506,6 +1546,7 @@ declare module '@strapi/strapi' {
       'api::brand.brand': ApiBrandBrand;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::cofilling.cofilling': ApiCofillingCofilling;
+      'api::contact-hub.contact-hub': ApiContactHubContactHub;
       'api::contactus-page.contactus-page': ApiContactusPageContactusPage;
       'api::event-page.event-page': ApiEventPageEventPage;
       'api::extension-page.extension-page': ApiExtensionPageExtensionPage;

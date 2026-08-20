@@ -1,0 +1,55 @@
+{
+  "kind": "singleType",
+  "collectionName": "contact_hub",
+  "info": {
+    "singularName": "contact-hub",
+    "pluralName": "contact-hubs",
+    "displayName": "Contact hub"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "HeroBadge": {
+      "type": "string",
+      "default": "Contact Hub"
+    },
+    "HeroTitle": {
+      "type": "string",
+      "default": "How Can We Help You Today?"
+    },
+    "HeroDescription": {
+      "type": "text",
+      "default": "Select the category that best matches your request below to get redirected to the right team."
+    },
+    "ContactCards": {
+      "type": "component",
+      "repeatable": true,
+      "component": "shared.contact-card"
+    },
+    "Contact_email": {
+      "type": "email",
+      "required": true
+    },
+    "Contact_number": {
+      "type": "string",
+      "required": true
+    },
+    "Terms_of_use": {
+      "type": "blocks"
+    },
+    "Privacy_policy_page": {
+      "type": "blocks"
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}

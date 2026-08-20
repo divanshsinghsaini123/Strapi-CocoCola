@@ -473,6 +473,35 @@ export interface SharedComtactus extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedContactCard extends Struct.ComponentSchema {
+  collectionName: 'components_sections_contact_cards';
+  info: {
+    description: 'Interactive card for Contact Hub redirect';
+    displayName: 'Contact Card';
+    icon: 'mail';
+  };
+  attributes: {
+    badge: Schema.Attribute.String & Schema.Attribute.Required;
+    color: Schema.Attribute.String &
+      Schema.Attribute.DefaultTo<'bg-red-50 text-red-600 border-red-100'>;
+    description: Schema.Attribute.Text & Schema.Attribute.Required;
+    href: Schema.Attribute.String & Schema.Attribute.Required;
+    icon: Schema.Attribute.Enumeration<
+      [
+        'MessageSquare',
+        'Building2',
+        'Factory',
+        'Sparkles',
+        'FileSearch',
+        'HelpCircle',
+      ]
+    > &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'MessageSquare'>;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedCustomScript extends Struct.ComponentSchema {
   collectionName: 'components_shared_custom_scripts';
   info: {
@@ -936,6 +965,7 @@ declare module '@strapi/strapi' {
       'shared.carousel-items': SharedCarouselItems;
       'shared.column': SharedColumn;
       'shared.comtactus': SharedComtactus;
+      'shared.contact-card': SharedContactCard;
       'shared.custom-script': SharedCustomScript;
       'shared.event-component': SharedEventComponent;
       'shared.event-image': SharedEventImage;

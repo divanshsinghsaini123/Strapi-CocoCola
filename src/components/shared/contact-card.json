@@ -1,0 +1,44 @@
+{
+  "collectionName": "components_sections_contact_cards",
+  "info": {
+    "displayName": "Contact Card",
+    "icon": "mail",
+    "description": "Interactive card for Contact Hub redirect"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "badge": {
+      "type": "string",
+      "required": true
+    },
+    "href": {
+      "type": "string",
+      "required": true
+    },
+    "icon": {
+      "type": "enumeration",
+      "enum": [
+        "MessageSquare",
+        "Building2",
+        "Factory",
+        "Sparkles",
+        "FileSearch",
+        "HelpCircle"
+      ],
+      "default": "MessageSquare",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "default": "bg-red-50 text-red-600 border-red-100"
+    }
+  }
+}
