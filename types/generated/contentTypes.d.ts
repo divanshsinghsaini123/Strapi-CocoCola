@@ -687,7 +687,7 @@ export interface ApiCofillingCofilling extends Struct.SingleTypeSchema {
 }
 
 export interface ApiContactHubContactHub extends Struct.SingleTypeSchema {
-  collectionName: 'contact_hub';
+  collectionName: 'contact_hubs';
   info: {
     displayName: 'Contact hub';
     pluralName: 'contact-hubs';
@@ -703,12 +703,17 @@ export interface ApiContactHubContactHub extends Struct.SingleTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    DisablePage: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     HeroBadge: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Contact Hub'>;
-    HeroDescription: Schema.Attribute.Text &
+    HeroDescription: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Select the category that best matches your request below to get redirected to the right team.'>;
     HeroTitle: Schema.Attribute.String &
+      Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'How Can We Help You Today?'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -716,10 +721,8 @@ export interface ApiContactHubContactHub extends Struct.SingleTypeSchema {
       'api::contact-hub.contact-hub'
     > &
       Schema.Attribute.Private;
-    Privacy_policy_page: Schema.Attribute.Blocks;
     publishedAt: Schema.Attribute.DateTime;
     SEO: Schema.Attribute.Component<'shared.seo', false>;
-    Terms_of_use: Schema.Attribute.Blocks;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

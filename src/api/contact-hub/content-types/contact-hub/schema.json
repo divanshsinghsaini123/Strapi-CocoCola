@@ -1,6 +1,6 @@
 {
   "kind": "singleType",
-  "collectionName": "contact_hub",
+  "collectionName": "contact_hubs",
   "info": {
     "singularName": "contact-hub",
     "pluralName": "contact-hubs",
@@ -13,20 +13,23 @@
   "attributes": {
     "HeroBadge": {
       "type": "string",
-      "default": "Contact Hub"
+      "default": "Contact Hub",
+      "required": true
     },
     "HeroTitle": {
       "type": "string",
-      "default": "How Can We Help You Today?"
+      "default": "How Can We Help You Today?",
+      "required": true
     },
     "HeroDescription": {
-      "type": "text",
-      "default": "Select the category that best matches your request below to get redirected to the right team."
+      "type": "string",
+      "default": "Select the category that best matches your request below to get redirected to the right team.",
+      "required": true
     },
     "ContactCards": {
       "type": "component",
-      "repeatable": true,
-      "component": "shared.contact-card"
+      "component": "shared.contact-card",
+      "repeatable": true
     },
     "Contact_email": {
       "type": "email",
@@ -36,20 +39,15 @@
       "type": "string",
       "required": true
     },
-    "Terms_of_use": {
-      "type": "blocks"
-    },
-    "Privacy_policy_page": {
-      "type": "blocks"
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     },
     "SEO": {
       "type": "component",
       "component": "shared.seo",
       "repeatable": false
-    },
-    "DisablePage": {
-      "type": "boolean",
-      "default": false
     }
   }
 }
