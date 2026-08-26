@@ -37,6 +37,11 @@
     "terms_and_conditions": {
       "type": "blocks",
       "required": true
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "config": {}

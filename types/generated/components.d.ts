@@ -791,6 +791,9 @@ export interface SharedMirzapur extends Struct.ComponentSchema {
       Schema.Attribute.DefaultTo<'Where is the Special Code?'>;
     bottle_image: Schema.Attribute.Media<'images' | 'files'> &
       Schema.Attribute.Required;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     form_heading: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Mirzapur Campaign'>;
