@@ -610,6 +610,34 @@ export interface ApiBrandBrand extends Struct.SingleTypeSchema {
   };
 }
 
+export interface ApiCampaignCampaign extends Struct.SingleTypeSchema {
+  collectionName: 'campaigns';
+  info: {
+    displayName: 'Campaign';
+    pluralName: 'campaigns';
+    singularName: 'campaign';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::campaign.campaign'
+    > &
+      Schema.Attribute.Private;
+    Mirzapur: Schema.Attribute.Component<'shared.mirzapur', false>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCobrandingCobranding extends Struct.SingleTypeSchema {
   collectionName: 'cobrandings';
   info: {
@@ -1547,6 +1575,7 @@ declare module '@strapi/strapi' {
       'api::become-our-distributor-contact-us.become-our-distributor-contact-us': ApiBecomeOurDistributorContactUsBecomeOurDistributorContactUs;
       'api::become-our-distributor.become-our-distributor': ApiBecomeOurDistributorBecomeOurDistributor;
       'api::brand.brand': ApiBrandBrand;
+      'api::campaign.campaign': ApiCampaignCampaign;
       'api::cobranding.cobranding': ApiCobrandingCobranding;
       'api::cofilling.cofilling': ApiCofillingCofilling;
       'api::contact-hub.contact-hub': ApiContactHubContactHub;

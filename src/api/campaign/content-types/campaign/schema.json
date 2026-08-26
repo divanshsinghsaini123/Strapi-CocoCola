@@ -1,0 +1,20 @@
+{
+  "kind": "singleType",
+  "collectionName": "campaigns",
+  "info": {
+    "singularName": "campaign",
+    "pluralName": "campaigns",
+    "displayName": "Campaign"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Mirzapur": {
+      "type": "component",
+      "component": "shared.mirzapur",
+      "repeatable": false
+    }
+  }
+}

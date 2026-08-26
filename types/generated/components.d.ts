@@ -777,6 +777,30 @@ export interface SharedMedia extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedMirzapur extends Struct.ComponentSchema {
+  collectionName: 'components_shared_mirzapurs';
+  info: {
+    displayName: 'Mirzapur';
+  };
+  attributes: {
+    bottle_descriptoin: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Check your bottle wrapper or neck to find your unique special code as shown in the reference image below.'>;
+    bottle_heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Where is the Special Code?'>;
+    bottle_image: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+    form_heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Mirzapur Campaign'>;
+    form_tittle: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'Special Contest'>;
+    terms_and_conditions: Schema.Attribute.Blocks & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedOurServices extends Struct.ComponentSchema {
   collectionName: 'components_shared_our_services';
   info: {
@@ -984,6 +1008,7 @@ declare module '@strapi/strapi' {
       'shared.logistics': SharedLogistics;
       'shared.manufacturer-s-details': SharedManufacturerSDetails;
       'shared.media': SharedMedia;
+      'shared.mirzapur': SharedMirzapur;
       'shared.our-services': SharedOurServices;
       'shared.packaging': SharedPackaging;
       'shared.packaging-cards': SharedPackagingCards;

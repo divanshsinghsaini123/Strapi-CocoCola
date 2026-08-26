@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_shared_mirzapurs",
+  "info": {
+    "displayName": "Mirzapur"
+  },
+  "options": {},
+  "attributes": {
+    "form_tittle": {
+      "type": "string",
+      "default": "Special Contest",
+      "required": true
+    },
+    "form_heading": {
+      "type": "string",
+      "default": "Mirzapur Campaign",
+      "required": true
+    },
+    "bottle_heading": {
+      "type": "string",
+      "default": "Where is the Special Code?",
+      "required": true
+    },
+    "bottle_descriptoin": {
+      "type": "string",
+      "default": "Check your bottle wrapper or neck to find your unique special code as shown in the reference image below.",
+      "required": true
+    },
+    "bottle_image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "terms_and_conditions": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}
