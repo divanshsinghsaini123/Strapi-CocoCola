@@ -24,6 +24,15 @@
       "type": "component",
       "component": "default.blog",
       "repeatable": true
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "author": {
+      "type": "string",
+      "default": "Admin",
+      "required": true
     }
   }
 }
