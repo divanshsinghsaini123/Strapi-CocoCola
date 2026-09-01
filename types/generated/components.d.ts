@@ -15,6 +15,23 @@ export interface DefaultAbooutus extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultBlog extends Struct.ComponentSchema {
+  collectionName: 'components_default_blogs';
+  info: {
+    displayName: 'blog';
+  };
+  attributes: {
+    blogContent: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    description: Schema.Attribute.String & Schema.Attribute.Required;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    images: Schema.Attribute.Media<'images' | 'files', true> &
+      Schema.Attribute.Required;
+    slug: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
+  };
+}
+
 export interface DefaultCallToActionCard extends Struct.ComponentSchema {
   collectionName: 'components_default_call_to_action_cards';
   info: {
@@ -965,6 +982,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'default.abooutus': DefaultAbooutus;
+      'default.blog': DefaultBlog;
       'default.call-to-action-card': DefaultCallToActionCard;
       'default.cards': DefaultCards;
       'default.factoryhighlights': DefaultFactoryhighlights;

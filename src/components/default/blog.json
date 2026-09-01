@@ -5,11 +5,19 @@
   },
   "options": {},
   "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
     "slug": {
       "type": "string",
       "required": true,
       "unique": true,
       "regex": "^[^\\s]+$"
+    },
+    "description": {
+      "type": "string",
+      "required": true
     },
     "images": {
       "type": "media",
