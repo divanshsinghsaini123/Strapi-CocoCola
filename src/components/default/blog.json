@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_default_blogs",
+  "info": {
+    "displayName": "blog"
+  },
+  "options": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true,
+      "unique": true,
+      "regex": "^[^\\s]+$"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "blogContent": {
+      "type": "blocks",
+      "required": true
+    }
+  },
+  "config": {}
+}
