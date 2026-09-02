@@ -33,6 +33,17 @@
       "type": "string",
       "default": "Admin",
       "required": true
+    },
+    "SEO": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false,
+      "required": true
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   }
 }

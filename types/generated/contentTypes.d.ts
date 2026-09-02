@@ -600,6 +600,9 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     date: Schema.Attribute.Date & Schema.Attribute.Required;
     description: Schema.Attribute.String;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     heading: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'Blogs'>;
@@ -607,6 +610,8 @@ export interface ApiBlogBlog extends Struct.SingleTypeSchema {
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::blog.blog'> &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'shared.seo', false> &
+      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
