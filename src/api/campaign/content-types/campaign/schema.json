@@ -15,6 +15,11 @@
       "type": "component",
       "component": "shared.mirzapur",
       "repeatable": false
+    },
+    "MirzapurVotes": {
+      "type": "component",
+      "component": "default.mirzapur-votes",
+      "repeatable": false
     }
   }
 }

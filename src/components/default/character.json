@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_default_characters",
+  "info": {
+    "displayName": "character"
+  },
+  "options": {},
+  "attributes": {
+    "characterName": {
+      "type": "string",
+      "required": true
+    },
+    "characterPhoto": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  },
+  "config": {}
+}

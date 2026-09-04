@@ -66,6 +66,18 @@ export interface DefaultCards extends Struct.ComponentSchema {
   };
 }
 
+export interface DefaultCharacter extends Struct.ComponentSchema {
+  collectionName: 'components_default_characters';
+  info: {
+    displayName: 'character';
+  };
+  attributes: {
+    characterName: Schema.Attribute.String & Schema.Attribute.Required;
+    characterPhoto: Schema.Attribute.Media<'images' | 'files'> &
+      Schema.Attribute.Required;
+  };
+}
+
 export interface DefaultFactoryhighlights extends Struct.ComponentSchema {
   collectionName: 'components_default_factoryhighlights';
   info: {
@@ -174,6 +186,25 @@ export interface DefaultHero2 extends Struct.ComponentSchema {
     leftbutton: Schema.Attribute.Component<'shared.button', false>;
     media: Schema.Attribute.Component<'shared.media', true>;
     rightbutton: Schema.Attribute.Component<'shared.button', false>;
+  };
+}
+
+export interface DefaultMirzapurVotes extends Struct.ComponentSchema {
+  collectionName: 'components_default_mirzapur_votes';
+  info: {
+    displayName: 'Mirzapur-votes';
+  };
+  attributes: {
+    character: Schema.Attribute.Component<'default.character', true>;
+    footerText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'IF THEY SURVIVE, YOU STAND A CHANCE TO WIN A MOVIE TICKET'>;
+    heading: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'PICK YOUR MIRZAPUR CHARACTER.'>;
+    mainText: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<'WIN FREE MIRZAPUR TICKETS'>;
   };
 }
 
@@ -985,12 +1016,14 @@ declare module '@strapi/strapi' {
       'default.blog': DefaultBlog;
       'default.call-to-action-card': DefaultCallToActionCard;
       'default.cards': DefaultCards;
+      'default.character': DefaultCharacter;
       'default.factoryhighlights': DefaultFactoryhighlights;
       'default.faq': DefaultFaq;
       'default.footer-section': DefaultFooterSection;
       'default.hero': DefaultHero;
       'default.hero-section-aboutus': DefaultHeroSectionAboutus;
       'default.hero2': DefaultHero2;
+      'default.mirzapur-votes': DefaultMirzapurVotes;
       'default.nav-links': DefaultNavLinks;
       'default.q-and-a': DefaultQAndA;
       'default.social-link': DefaultSocialLink;
