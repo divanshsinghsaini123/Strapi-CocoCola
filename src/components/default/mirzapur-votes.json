@@ -24,6 +24,11 @@
       "type": "string",
       "default": "IF THEY SURVIVE, YOU STAND A CHANCE TO WIN A MOVIE TICKET",
       "required": true
+    },
+    "DisablePage": {
+      "type": "boolean",
+      "required": true,
+      "default": false
     }
   },
   "config": {}

@@ -671,6 +671,7 @@ export interface ApiCampaignCampaign extends Struct.SingleTypeSchema {
     Mirzapur: Schema.Attribute.Component<'shared.mirzapur', false>;
     MirzapurVotes: Schema.Attribute.Component<'default.mirzapur-votes', false>;
     publishedAt: Schema.Attribute.DateTime;
+    SEO: Schema.Attribute.Component<'shared.seo', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

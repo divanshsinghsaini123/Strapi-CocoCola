@@ -196,6 +196,9 @@ export interface DefaultMirzapurVotes extends Struct.ComponentSchema {
   };
   attributes: {
     character: Schema.Attribute.Component<'default.character', true>;
+    DisablePage: Schema.Attribute.Boolean &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<false>;
     footerText: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'IF THEY SURVIVE, YOU STAND A CHANCE TO WIN A MOVIE TICKET'>;
