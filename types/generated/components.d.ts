@@ -205,6 +205,7 @@ export interface DefaultMirzapurVotes extends Struct.ComponentSchema {
     heading: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'PICK YOUR MIRZAPUR CHARACTER.'>;
+    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     mainText: Schema.Attribute.String &
       Schema.Attribute.Required &
       Schema.Attribute.DefaultTo<'WIN FREE MIRZAPUR TICKETS'>;
